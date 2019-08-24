@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="renderer" content="webkit|ie-stand">
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+<link rel="icon" href="../r/cms/zcb/zcb/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="../r/cms/zcb/zcb/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="../r/cms/zcb/zcb/css/reset.min.css">
+<link rel="stylesheet" type="text/css" href="../r/cms/zcb/zcb/css/main2.css">
+<link rel="stylesheet" type="text/css" href="../r/cms/zcb/zcb/theme/liMarquee/liMarquee.css">
+<script type="text/javascript" src="../r/cms/zcb/zcb/theme/jquery/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../r/cms/zcb/zcb/theme/liMarquee/jquery.liMarquee.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="../r/cms/zcb/zcb/css/basic.css">
+<link rel="stylesheet" type="text/css" href="../r/cms/zcb/zcb/css/common.css">
+
+<style type="text/css">
+.marquee {
+	position: absolute;
+	right: 160px;
+	left: 740px;
+}
+
+.marquee .str_wrap {
+	line-height: 66px;
+	font-size: 16px;
+	color: #f25c2e;
+}
+</style>
+<script type="text/javascript">
+	$(function() {
+		$(".dowebok").liMarquee();
+	});
+	function preview() {
+		bdhtml = window.document.body.innerHTML;//获取当前页的html代码
+		sprnstr = "<!--startprint-->";//设置打印开始区域
+		eprnstr = "<!--endprint-->";//设置打印结束区域
+		prnhtml = bdhtml.substring(bdhtml.indexOf(sprnstr) + 17); //从开始代码向后取html
+		prnhtml = prnhtml.substring(0, prnhtml.indexOf(eprnstr));//从结束代码向前取html
+		window.document.body.innerHTML = prnhtml;
+		window.print();
+		window.document.body.innerHTML = bdhtml;
+	}
+</script>
+<title>豫创天下创业创新大赛</title>
+</head>
+<body>
+
+<header class="ey-head"> 
+   <nav class="navbar navbar-default box-shadow-none ey-nav"> 
+    <div class="container"> 
+     <div class="row">  
+      <div class="navbar-header pull-xs-left"> 
+       <a href="index.html" class="navbar-logo vertical-align block pull-xs-left" title="豫创天下"> 
+        <div class="vertical-align-middle"> 
+         <img src="../r/cms/zcb/zcb/img/yctxlogo.png" alt="豫创天下" /> 
+        </div> </a> 
+      </div>
+     
+    
+      <div class="collapse navbar-collapse navbar-collapse-toolbar pull-md-right p-0" id="ey-nav-collapse"> 
+       <ul class="nav navbar-nav navlist"> 
+        <li class="nav-item"> <a href="index.html"  class="nav-link ">首页</a> </li> 
+        
+        <li class="nav-item dropdown m-l-10"> <a href="dsjs.html" class="nav-link active"  data-hover="dropdown" aria-haspopup="true" aria-expanded="false"> 大赛介绍</a> 
+        </li> 
+         <li class="nav-item dropdown m-l-10"> <a href="ssdt.html" class="nav-link dropdown-toggle"  data-hover="dropdown" aria-haspopup="true" aria-expanded="false"> 赛事动态</a> 
+        </li>
+         <li class="nav-item dropdown m-l-10"> <a href="zcds.html" class="nav-link dropdown-toggle"  data-hover="dropdown" aria-haspopup="true" aria-expanded="false"> 众创导师</a> 
+        </li>
+         <li class="nav-item dropdown m-l-10"> <a href="wjhg.html" class="nav-link dropdown-toggle"  data-hover="dropdown" aria-haspopup="true" aria-expanded="false"> 往届回顾</a> 
+        </li>
+         <li class="nav-item dropdown m-l-10"> <a href="hzzy.html" class="nav-link dropdown-toggle"  data-hover="dropdown" aria-haspopup="true" aria-expanded="false"> 合作资源</a> 
+        </li>
+         <li class="nav-item dropdown m-l-10"> <a href="zczc.html" class="nav-link dropdown-toggle"  data-hover="dropdown" aria-haspopup="true" aria-expanded="false"> 政策支持</a> 
+        </li>
+        
+          <li class="nav-item m-l-10 ey-login">
+           
+              <a href="loginmana.php" id="login" class="navlog">登录</a><span>|</span>
+           
+              <a href="selection.html" id="register" class="navreg">注册</a>
+          </li>
+       
+
+       </ul> 
+      </div> 
+     </div> 
+    </div> 
+   </nav> 
+  </header> 
+<script type="text/javascript">
+    $(function () {
+        var url = window.location.href;
+        $(".navbar li").each(function () {
+            var href = $(this).find("a").attr("href");
+            if(url.indexOf("sfjd") > 0||url.indexOf("Sfjd") > 0||url.indexOf("cooperator") > 0||url.indexOf("Cooperator") > 0||url.indexOf("hzdw") > 0||url.indexOf("Hzdw") > 0){
+            	$(".navbar li").removeClass("active");
+            	$("#cooperator_li").addClass("active");
+            	return;
+            }
+            if (url.indexOf(href) > 0) {
+                $(".navbar li").removeClass("active");
+                if (url.indexOf("competition/") > 0||url.indexOf("dsjs") > 0||url.indexOf("Dsjs") > 0) {
+                    $("#competitionIntroduce").addClass("active");
+                } else {
+                    $(this).addClass("active");
+                }
+            } else {
+                if (url.indexOf("competition/") > 0||url.indexOf("dsjs") > 0||url.indexOf("Dsjs") > 0) {
+                    $(".navbar li").removeClass("active");
+                    $("#competitionIntroduce").addClass("active");
+                }
+            }
+        });
+        $("#icon-search").click(function () {
+            if ($(this).hasClass("in")) {
+                $("#icon-search").removeClass("in");
+                $("#search_cont").hide();
+            }
+            else {
+                $("#icon-search").addClass("in");
+                $("#search_cont").show();
+            }
+        });
+
+    });
+
+    function gotoIndexpage() {
+        location.href = "http://gdrst.gdhrss.gov.cn/zcb/index.html";
+    }
+</script>	<div class="sign-up">
+		<img class="banner" src="../r/cms/zcb/zcb/img/com-intro-bg.jpg" />
+	</div>
+<div class="game-nav">
+		<ul>
+			<li class="active"><a href="#">大赛概况</a></li>
+			<li ><a href="#">豫创天下大赛</a></li>
+		</ul>
+	</div>	<div class="com-intro">
+		<div class="com-info">
+			<div class="title">大赛总介绍</div>
+			<p style="text-indent: 2em;"><span style="font-family: 仿宋_GB2312; font-size: 16px;"></span></p><p style="margin-right:0;margin-left:0;text-indent:42px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:37px"><span style="font-size: 16px; font-family: 仿宋_GB2312;">大赛分科技海归领航赛、博士博士后创新赛、大学生启航赛、技能工匠争先赛、残疾人公益赛、大众创业创富赛、农村电商赛七个单项赛事进行。重点鼓励新材料、新能源及节能环保、生物医药、文化创意、电子信息、高端装备制造、互联网和移动互联网、现代农业、生活服务业、社会公益等领域创业项目参赛。</span></p><p style="margin-right:0;margin-left:0;text-indent:42px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:37px"><span style="font-size: 16px; font-family: 仿宋_GB2312;">科技海归领航赛、博士博士后创新赛、大学生启航赛、技能工匠争先赛、农村电商赛分团队组和企业组进行比赛。残疾人公益赛分团队组和企业组进行比赛，每组分设自强类和助残类。大众创业创富赛分团队组（创意组）、企业组（创业组）、创富组进行比赛。</span></p><p style="text-indent: 2em;"><span style="font-family: 仿宋_GB2312; font-size: 16px;"></span></p><p style="text-indent:42px"><span style="font-family: 仿宋_GB2312; font-size: 16px;"></span></p><p style="margin-right:0;margin-left:0;text-indent:42px;text-autospace:ideograph-numeric;text-align:justify;text-justify:inter-ideograph;line-height:37px"><span style="font-family: &quot;Times New Roman&quot;; font-size: 16px;"><span style="font-size: 16px; font-family: 仿宋_GB2312;">参赛对象不限户籍、地域并面向港澳台和海外人员，有意向在河南创业的团队和已经在河南登记注册的创业主体均可报名，曾获得河南</span>“<span style="font-size: 16px; font-family: 仿宋_GB2312;">众创杯</span>”<span style="font-size: 16px; font-family: 仿宋_GB2312;">系列赛事金银铜奖、省级优秀创业项目资助以及</span>“<span style="font-size: 16px; font-family: 仿宋_GB2312;">赢在广州</span>”<span style="font-size: 16px; font-family: 仿宋_GB2312;">大学生创业大赛一、二、三等奖的除外。</span></span></p><p style="margin-right: 0px; margin-left: 0px; text-indent: 42px; text-align: justify; line-height: 37px;"><span style="font-family: &quot;Times New Roman&quot;; font-size: 16px;">参赛团队（企业）报名时只能选择七个单项赛事中的一项，不得兼报。</span></p>
+		</div>
+		<div class="com-object">
+		<!--参赛对象栏目  -->
+			<div class="title">参赛对象</div>
+			<ul class="com-object-nav">
+			<!--参数对象中文章形式展现 -->
+				<li class="active">科技（海归）人员领航赛</li>
+			<!--参数对象中文章形式展现 -->
+				<li >博士博士后创新赛</li>
+			<!--参数对象中文章形式展现 -->
+				<li >大学生启航赛</li>
+			<!--参数对象中文章形式展现 -->
+				<li >技能工匠争先赛</li>
+			<!--参数对象中文章形式展现 -->
+				<li >残疾人公益赛</li>
+			<!--参数对象中文章形式展现 -->
+				<li >大众创业创富赛</li>
+			<!--参数对象中文章形式展现 -->
+				<li >农村电商赛</li>
+			</ul>
+			<ul class="com-object-content">
+				<li  style="display: block;">
+					<p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;">1.赛事分团队组和企业组，参赛团队或企业核心成员中至少包含一名下列人员：</p><p style="margin-right:0;margin-left:0;text-indent:42px;text-autospace:ideograph-numeric;line-height:35px">（1）具有中级及以上职称的专业技术人员；</p><p style="margin-right:0;margin-left:0;text-indent:42px;text-autospace:ideograph-numeric;line-height:35px">（2）具有技师及以上职业资格的技能人员；</p><p style="margin-right:0;margin-left:0;text-indent:42px;text-autospace:ideograph-numeric;line-height:35px">（3）具有研究生学历或硕士及以上学位的人员；</p><p style="margin-right:0;margin-left:0;text-indent:42px;text-autospace:ideograph-numeric;line-height:35px">（4）在高校、科研院所及其他企事业单位从事科学研究、技术开发等工作的人员；</p><p style="margin-right:0;margin-left:0;text-indent:42px;text-autospace:ideograph-numeric;line-height:35px">（5）留学回国人员；</p><p style="margin-right:0;margin-left:0;text-indent:42px;text-autospace:ideograph-numeric;line-height:35px">（6）各级政府部门认定的高层次人才；</p><p style="margin-right:0;margin-left:0;text-indent:42px;text-autospace:ideograph-numeric;line-height:35px">（7）拥有自主知识产权的人员。</p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;">2.主办单位：河南省人力资源和社会保障厅、河南省科学技术厅、河南省财政厅、河南省人民政府港澳事务办公室、河南省人民政府台湾事务办公室、共青团河南省委员会、河南省妇女联合会</p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;">3.支持单位：河南省科学技术协会</p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;">4.承办单位：珠海市人力资源和社会保障局</p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;">5.协办单位：中山市人力资源和社会保障局、佛山市人力资源和社会保障局、汕头市人力资源和社会保障局、清远市人力资源和社会保障局</p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;">6.执行机构：组委会下设立科技海归人员领航赛执行委员会（以下简称总执委会，设在珠海市人力资源和社会保障局）。总执委会下设办公室，负责大赛组织、宣传和协调工作。</p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;"><br/></p>
+				</li>
+				<li >
+					<p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;">1<span style="color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;; text-align: justify; text-indent: 32px;">.赛事分团队组和企业组，参赛团队或企业核心成员中至少包含一名下列人员：国（境）内外具有博士学位的人员或在读博士研究生；在站或已出站的博士后科研人员。</span></p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;"><span style="color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;; text-align: justify; text-indent: 32px;">2.指导单位：河南省委组织部</span></p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;"><span style="color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;; text-align: justify; text-indent: 32px;">3.主办单位：河南省人力资源和社会保障厅、河南省教育厅、河南省科学技术厅、河南省财政厅、共青团河南省委员会、河南省妇女联合会</span></p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;"><span style="color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;; text-align: justify; text-indent: 32px;">4.支持单位：河南省科学技术协会</span></p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;"><span style="color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;; text-align: justify; text-indent: 32px;">5.承办单位：在大赛官方网站另行公布</span></p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;"><span style="color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;; text-align: justify; text-indent: 32px;">6.执行机构：在组委会下设立博士和博士后专赛执行委员会，总执委会下设办公室，负责大赛组织、宣传和协调工作。</span></p><p><br/></p>
+				</li>
+				<li >
+					<p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;">1.参赛对象：赛事分团队组和企业组进行比赛。团队组参赛成员必须符合如下条件之一：（1）河南省行政区域内全日制普通高等院校在校学生；（2）香港、澳门、台湾地区在读大学生；（3）在河南省内校区就读的国内普通高等院校在校学生。每个参赛成员须由学校出具在校学生证明。企业组参赛成员必须为全日制普通高等学校在校或毕业5年内（2013年6月-2018年8月期间毕业，下同）学生，台湾赛区参赛成员必须为台湾公私立大学或科技院校在校生或毕业5年内毕业生。</p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;">2.主办单位：河南省人力资源和社会保障厅、河南省教育厅、河南省人民政府港澳事务办公室、河南省人民政府台湾事务办公室、共青团河南省委员会</p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;">3.承办单位：广州市人力资源和社会保障局</p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;">4.协办单位：中国南方人才市场管理委员会办公室</p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;">6.执行单位：广州南方人才大学生就业市场有限公司、广州市青年就业创业协会、南方人才网</p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;">7.执行机构：在组委会下设立大学生启航赛执行委员会（以下简称总执委会，设在广州市人力资源和社会保障局）。总执委会下设办公室（设在中国南方人才市场管理委员会办公室），负责大赛组织、宣传和协调工作。&nbsp; &nbsp;&nbsp;</p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;"><br/></p>
+				</li>
+				<li >
+					<p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;">1.参赛对象。团队组成员须为河南省行政区域内技工院校和中职学校在校学生（每个参赛成员须提供在校学生证明），且项目尚未进行登记注册。企业组参赛项目负责人须为技工院校和中职学校在校及毕业生或具有职业资格证书的人员。</p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;">2.主办单位：河南省人力资源和社会保障厅、河南省发展和改革委员会、河南省教育厅、共青团河南省委员会、河南省妇女联合会</p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;">3.承办单位：佛山市人力资源和社会保障局</p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;">4.执行机构：在组委会下设立技能工匠争先赛执行委员会（以下简称总执委会，设在佛山市人力资源和社会保障局）。总执委会下设办公室，负责大赛组织、宣传和协调工作。</p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;"><br/></p>
+				</li>
+				<li >
+					<p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;">1<span style="color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;; text-align: justify; text-indent: 32px;">.</span>参赛对象。赛事设团队组和企业组两个组别，每个组别设自强类和助残类两个类别。自强类是指残疾人作为团队或企业（机构）的核心成员，有意向或已经在从事的各类创业创新项目。助残类是指各类团队或企业（机构）有意向或已经在从事残疾人服务或能带动残疾人就业的各类创业创新项目。</p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;">2.主办单位：河南省人力资源和社会保障厅、河南省发展和改革委员会、河南省教育厅、河南省科学技术厅、河南省财政厅、河南省农业厅、河南省商务厅、河南省人民政府港澳事务办公室、河南省人民政府台湾事务办公室、共青团河南省委员会、河南省妇女联合会、河南省残疾人联合会</p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;">3.支持单位：河南省人民政府金融工作办公室、河南省科学技术协会、中山大学、中国人民银行广州分行、中国银行业监督管理委员会河南监管局、河南广播电视台</p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;">4.承办单位：河南省残疾人就业服务中心</p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;">5.协办单位：河南狮子会、河南省残疾人公益基金会、河南省残疾人就业创业促进会、河南省志愿者联合会</p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;">6.执行机构：在组委会下设立残疾人公益赛执行委员会（以下简称总执委会，设在省残疾人就业服务中心），总执委会下设办公室，负责大赛统筹协调工作。</p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;"><br/></p>
+				</li>
+				<li >
+					<p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;">1.大赛分为团队组（创意组）、企业组（创业组）和创富组进行比赛。</p><p style="margin-right:0;margin-left:0;text-indent:42px;text-autospace:ideograph-other;text-align:justify;text-justify:inter-ideograph;line-height:35px">团队组（创意组）。</p><p style="margin-right:0;margin-left:0;text-indent:42px;text-autospace:ideograph-other;text-align:justify;text-justify:inter-ideograph;line-height:35px">（1）有创业意向或正准备在河南创业的城乡劳动者组成的创业团队，截至报名时尚未在河南省行政区域内登记注册；</p><p style="margin-right:0;margin-left:0;text-indent:42px;text-autospace:ideograph-other;text-align:justify;text-justify:inter-ideograph;line-height:35px"><span style="text-align: justify; text-indent: 42px;">（2）</span>项目具有商业开发价值、实际用途广泛、市场发展空间大、适合带动各类群体就业；</p><p style="margin-right:0;margin-left:0;text-indent:42px;text-autospace:ideograph-other;text-align:justify;text-justify:inter-ideograph;line-height:35px"><span style="text-align: justify; text-indent: 42px;">（3）</span>项目符合国家法律法规和产业政策，无知识产权纠纷；</p><p style="margin-right:0;margin-left:0;text-indent:42px;text-autospace:ideograph-other;text-align:justify;text-justify:inter-ideograph;line-height:35px"><span style="text-align: justify; text-indent: 42px;">（4）</span>项目团队成员需控制在3人以上（含）-8人以下（含），且均已年满18周岁；</p><p style="margin-right:0;margin-left:0;text-indent:42px;text-autospace:ideograph-other;text-align:justify;text-justify:inter-ideograph;line-height:35px"><br/></p><p>&nbsp; &nbsp; &nbsp; 企业组（创业组）。</p><p style="margin-right:0;margin-left:0;text-indent:42px;text-autospace:ideograph-other;text-align:justify;text-justify:inter-ideograph;line-height:35px"><span style="text-align: justify; text-indent: 42px;">（1）</span>2015年1月1日以后在河南省行政区域内登记注册的企业、个体工商户、民办非企业单位、新型农业经营主体等；</p><p style="margin-right:0;margin-left:0;text-indent:42px;text-autospace:ideograph-other;text-align:justify;text-justify:inter-ideograph;line-height:35px"><span style="text-align: justify; text-indent: 42px;">（2）</span>有创新性的产品、技术或商业模式，具有较高成长潜力；</p><p style="margin-right:0;margin-left:0;text-indent:42px;text-autospace:ideograph-other;text-align:justify;text-justify:inter-ideograph;line-height:35px"><span style="text-align: justify; text-indent: 42px;">（3）</span>符合国家法律法规和产业政策，经营规范，社会信誉良好，无知识产权纠纷。</p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;"><br/></p><p style="margin-right:0;margin-left:0;text-indent:42px;text-autospace:ideograph-other;text-align:justify;text-justify:inter-ideograph;line-height:35px">创富组。</p><p style="margin-right:0;margin-left:0;text-indent:42px;text-autospace:ideograph-other;text-align:justify;text-justify:inter-ideograph;line-height:35px"><span style="text-align: justify; text-indent: 42px;">（1）</span>2015年1月1日以前在河南省行政区域内登记注册的企业、个体工商户、民办非企业单位、新型农业经营主体等；</p><p style="margin-right:0;margin-left:0;text-indent:42px;text-autospace:ideograph-other;text-align:justify;text-justify:inter-ideograph;line-height:35px"><span style="text-align: justify; text-indent: 42px;">（2）</span>有创新性的产品、技术或商业模式，具有较高成长潜力；</p><p style="margin-right:0;margin-left:0;text-indent:42px;text-autospace:ideograph-other;text-align:justify;text-justify:inter-ideograph;line-height:35px"><span style="text-align: justify; text-indent: 42px;">（3）</span>符合国家法律法规和产业政策，经营规范，社会信誉良好，无知识产权纠纷。</p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;">2.主办单位：河南省人力资源和社会保障厅、河南省农业厅、共青团河南省委员会、河南省妇女联合会、中国邮政储蓄银行河南省分行</p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;">3.支持单位：河南省人民政府金融工作办公室、中国人民银行广州分行、中国银行业监督管理委员会河南监管局、<a href="http://www.baidu.com/link?url=wlTeKr_6nzblspeE_EfVTNSlvDpuwIQI46Hhou8lwI_" style="text-indent: 42px; font-family: sans-serif;">河南省科学技术协会</a>&nbsp;</p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;">4.承办单位：中国邮政储蓄银行广州市分行</p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;">5.执行机构：在组委会下设立大众创业创富赛执行委员会（以下简称总执委会，设在中国邮政储蓄银行河南省分行）。总执委会下设办公室（设在中国邮政储蓄银行广州市分行）和地级市分行执委会（以下简称执委会），负责大赛的具体组织、宣传和协调工作。</p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;"><br/></p>
+				</li>
+				<li >
+					<p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;">1.参赛对象：参赛项目须主要围绕各类农产品、民间手工艺品的包装设计作品，各类休闲农庄、民宿、休闲农业园区营销设计方案和通过互联网围绕农村市场、农业生产模式、农业服务方法及农产品销售方式等进行创业创新。</p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;">2.主办单位：河南省人力资源和社会保障厅、河南省商务厅、河南省农业厅、河南省妇女联合会</p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;">3.承办单位和执行机构：在大赛官方网站另行公布。</p><p style="margin-top: 0px; margin-bottom: 0px; white-space: normal; padding: 0px; text-indent: 32px; line-height: 30px; text-align: justify; color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;;"><br/></p>
+				</li>
+			</ul>
+		</div>
+		<div class="com-prize" id="prize">
+		<!--奖项设置栏目  -->
+			<div class="title">奖项设置</div>
+			<ul>
+				<li class="gp-1">
+					<div class="game-prize">
+						<span class="inblock sprite about1"></span>科技（海归）<br />人员领航赛
+					</div>
+					<p>团队组设金奖2名、银奖4名、铜奖5名，分别按10万元、8万元、5万元的标准给予省级优秀创业项目资助，2年内在河南落地创业的，可再分别申请10万元、7万元、5万元项目落地资助。<br style="white-space: normal;"/>企业组设金奖2名、银奖4名、铜奖5名，分别按20万元、15万元、10万元的标准给予省级优秀创业项目资助。<br style="white-space: normal;"/>获奖项目由组委会统一颁发获奖证书。</p>
+				</li>
+				<li class="gp-5">
+				<p>团队组设金奖1名、银奖2名、铜奖3名，分别按10万元、8万元、5万元的标准给予省级优秀创业项目资助，2年内在河南落地创业的，可再分别申请10万元、7万元、5万元项目落地资助。<br style="white-space: normal;"/>企业组设金奖1名、银奖2名、铜奖3名，分别按20万元、15万元、10万元的标准给予省级优秀创业项目资助。<br style="white-space: normal;"/>获奖项目由组委会统一颁发获奖证书。</p>
+					<div class="game-prize">
+						<span class="inblock sprite about8"></span>博士博士后<br />创新赛
+					</div>
+				</li>
+				<li class="gp-2">
+					<div class="game-prize">
+						<span class="inblock sprite about2"></span>大学生<br />启航赛
+					</div>
+					<p>团队组设金奖2名、银奖4名、铜奖5名、优胜奖35名，其中金奖、银奖、铜奖分别按10万元、8万元、5万元的标准给予省级优秀创业项目资助，2年内在河南落地创业的，可再分别申请10万元、7万元、5万元项目落地资助。优胜奖项目由总执委会按8000元/个的标准给予资助。团队组同时设创业伯乐奖（指导老师）46名、组织奖和创新奖若干名（根据报名情况确定）。创业伯乐奖（指导老师）、组织奖和创新奖由总执委会授予荣誉证书。<br style="white-space: normal;"/>企业组设金奖2名、银奖4名、铜奖5名，分别按20万元、15万元、10万元的标准给予省级优秀创业项目资助。<br style="white-space: normal;"/>金奖、银奖、铜奖及优胜奖项目由大赛组委会统一颁发获奖证书。<br style="white-space: normal;"/>其他支持措施：企业组项目获奖时已在广州市内创办企业或团队组项目获奖后2年内在广州市内成功落地创办企业的，创业项目可另外申领广州市优秀创业项目资助，资助标准为：金奖20万元，银奖15万元，铜奖10万元，优胜奖5万元。入围团队组优胜奖（含优胜奖）和企业组铜奖（含铜奖）以上竞赛奖励，可申请广州市创业项目征集补贴，标准为2000元/项。</p>
+				</li>
+				<li class="gp-3">
+				<p>团队组设金奖1名、银奖2名、铜奖3名、优胜奖6名，其中金奖、银奖、铜奖分别按10万元、8万元、5万元的标准给予省级优秀创业项目资助。2年内在河南落地创业的，可再分别申请10万元、7万元、5万元项目落地资助。团队组同时设创业伯乐奖（指导老师）12名。<br style="white-space: normal;"/>企业组设金奖1名、银奖2名、铜奖3名、优胜奖6名，其中金奖、银奖、铜奖分别按20万元、15万元、10万元给予省级优秀创业项目资助。<br style="white-space: normal;"/>金奖、银奖、铜奖及优胜奖项目由组委会统一颁发获奖证书。创业伯乐奖（指导老师）由总执委会授予荣誉证书。</p>
+					<div class="game-prize">
+						<span class="inblock sprite about3"></span>技能工匠<br />争先赛
+					</div>
+				</li>
+				<li class="gp-4">
+					<div class="game-prize">
+						<span class="inblock sprite about4"></span>残疾人<br />公益赛
+					</div>
+					 <p>团队组自强类设金奖1名、银奖2名、铜奖3名，团队组助残类设金奖1名、银奖2名、铜奖2名，金银铜奖分别按10万元、8万元、5万元的标准给予省级优秀创业项目资助。2年内在河南落地创业的，可再分别申请10万元、7万元、5万元项目落地资助。<br style="white-space: normal;"/>企业组自强类设金奖1名、银奖2名、铜奖3名，企业组助残类设金奖1名、银奖2名、铜奖2名，金银铜奖分别按20万元、15万元、10万元的标准给予省级优秀创业项目资助。&nbsp;</p>
+				</li>
+				<li class="gp-3">
+				   <p>团队组（创意组）设金奖2名、银奖4名、铜奖5名，分别按10万元、8万元、5万元的标准给予省级优秀创业项目资助。2年内在河南落地创业的，可再分别申请10万元、7万元、5万元项目落地资助。<br style="white-space: normal;"/>企业组（创业组）设金奖2名、银奖4名、铜奖5名，分别按20万元、15万元、10万元的标准给予省级优秀创业项目资助。<br style="white-space: normal;"/>创富组设金奖1名、银奖2名、铜奖3名，由总执委会分别按20万元、15万元、10万元标准给予奖励。<br style="white-space: normal;"/>获奖项目由组委会统一颁发获奖证书。</p>
+					<div class="game-prize">
+						<span class="inblock sprite about6"></span>大众创业<br />创富赛
+					</div>
+				</li>
+				<li class="gp-5">
+					<div class="game-prize">
+						<span class="inblock sprite about5"></span>农村<br />电商赛
+					</div>
+					<p>团队组设金奖1名、银奖2名、铜奖3名、优胜奖6名，其中金奖、银奖、铜奖分别按10万元、8万元、5万元的标准给予省级优秀创业项目资助。2年内在河南落地创业的，可再分别申请10万元、7万元、5万元项目落地资助。<br style="white-space: normal;"/>企业组设金奖1名、银奖2名、铜奖3名、优胜奖6名，其中金奖、银奖、铜奖分别按20万元、15万元、10万元的标准给予省级优秀创业项目资助。<br style="white-space: normal;"/>获奖项目由组委会统一颁发获奖证书。</p>
+				</li>
+			</ul>
+		</div>
+		<div class="com-org">
+		<!--  组织架构栏目-->
+			<div class="title">组织架构</div>
+			<div>
+				<!-- <p>
+					<span class="strong-num">1.</span>大赛成立大赛组委会，负责大赛总体指导和统筹规划等事宜，由主办单位负责同志组成。
+				</p>
+				<br />
+				<p>
+					<span class="strong-num">2.</span>大赛组委会下设秘书处（设在省人力资源社会保障厅），负责大赛的总体设计、统筹规划和沟通协调等事宜。
+				</p>
+				<br />
+				<p>
+					<span class="strong-num">3.</span>大赛秘书处下设工作小组，负责落实大赛的具体工作事宜。大赛同时设六个单项赛事执行机构，在大赛组委会统筹协调下，做好单项赛事具体组织、协调和实施等工作。
+				</p>
+				<br /> -->
+				<p style="white-space: normal;"><span class="strong-num">1.</span>大赛成立省组委会（下简称组委会），负责大赛总体指导和统筹规划等事宜。由黄汉标同志任大赛组委会主任，葛国兴同志及其他有关主办单位领导任副主任。</p><p style="white-space: normal;"><span class="strong-num">2.</span>组委会下设秘书处（设在省人力资源社会保障厅），负责执行组委会交办的具体事宜。</p><p style="white-space: normal;"><span class="strong-num">3.</span>大赛各承办单位及各单项赛事执行机构，负责做好单项赛事具体组织、协调和实施等工作。</p><p style="white-space: normal;"><span class="strong-num">4</span>.大赛秘书处通过政府采购方式确定大赛总体执行机构，负责协助大赛全程组织实施工作。</p>
+			</div>
+		</div>
+	</div>
+ <p class="footer">版权所有：河南省人力资源和社会保障厅&nbsp;&nbsp;&nbsp;&nbsp;
+        技术支持：河南上博软件科技有限公司</p>	<script type="text/javascript">
+		$(function() {
+			$(".com-object-nav li").hover(function() {
+				$(this).addClass('active').siblings().removeClass('active');
+				var index = $(this).index();
+				$('.com-object-content li').hide();
+				$('.com-object-content li:eq(' + index + ')').show();
+			})
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,802 @@
+@charset "utf-8";
+/*********************************************登录页******************************************/
+.header {
+	background-color: #fff;
+}
+
+.logo {
+	display: block;
+	width: 170px;
+	height: 67px;
+	line-height: 20em;
+	overflow: hidden;
+	margin: 0 50px 0 70px;
+	background: url(../img/logo.gif) no-repeat;
+}
+
+/*
+.nav a {
+	display: inline-block;
+	padding: 0 15px;
+	height: 68px;
+	line-height: 68px;
+	font-size: 18px;
+	float: left;
+	color: #444547;
+}
+
+.nav a:hover, .nav a.curr {
+	background: #4d8cf3;
+	color: #fff;
+}
+*/
+
+.banner {
+	height: 250px;
+	position: relative;
+	background: url("../img/logo-bg.jpg");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.banner img {
+	position: absolute;
+	left: 50%;
+	margin-left: -345px;
+	top: 50%;
+	margin-top: -80px;
+}
+
+.banner .signup {
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	font-size: 20px;
+	color: #fff;
+	background: url("../img/signup_bg.png") no-repeat;
+	margin-left: -104px;
+	width: 208px;
+	line-height: 48px;
+	height: 53px;
+	text-align: center;
+	border-radius: 8px;
+	letter-spacing: 1px;
+}
+
+.footer {
+	height: 80px;
+	line-height: 80px;
+	text-align: center;
+	color: #fff;
+	background: #4d8cf3;
+}
+
+.wrap {
+	width: 900px;
+	padding: 20px;
+	background: #fff;
+	margin: 25px auto;
+	position: relative;
+	min-height: 420px;
+}
+
+.wrap table {
+	position: absolute;
+	left: 50%;
+	top: 40%;
+	width: 364px;
+	margin-left: -182px;
+	margin-top: -120px;
+}
+
+.wrap table caption {
+	font-size: 20px;
+}
+
+.wrap table td {
+	padding: 5px;
+}
+
+.wrap table .input {
+	width: 99%;
+	line-height: 35px;
+	height: 35px;
+	padding: 3px 6px;
+	box-sizing: border-box;
+}
+
+.wrap table .verify {
+	width: 140px;
+}
+
+.wrap table .verify-img {
+	display: inline-block;
+	width: 85px;
+	border: 1px solid #ccc;
+	margin-left: 6px;
+	padding: 0px 10px;
+}
+
+.login {
+	background-color: #4d8cf3;
+	border: 1px solid #3f83f2;
+	color: #fff;
+	padding: 5px 20px;
+	height: 35px;
+	width: 100%;
+}
+
+.login:focus, .login:hover, .login:active {
+	background-color: #1a64dd;
+	border: 1px solid #105edd;
+	color: #fff;
+	outline: none;
+}
+
+.register {
+	border-bottom: 1px solid #4d8cf3;
+	color: #4d8cf3 !important;
+	position: relative;
+}
+
+.verify-error {
+	margin: 10px 0px;
+	text-align: left;
+	margin-left: 20%;
+	color: red;
+	font-size: 14px;
+	padding-top: 5px;
+}
+/*********************************************登录页******************************************/
+/*********************************************首页******************************************/
+/**设置首页的layer遮罩层的颜色*/
+.index .layui-layer-shade {
+	background-color: #000 !important;
+}
+
+.main {
+	position: relative;
+	margin: 10px auto;
+	width: 1200px;
+}
+
+.main-left {
+	position: absolute;
+	width: 230px;
+	background-color: #fff;
+	float: left;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	box-sizing: border-box;
+	text-indent: 1em;
+}
+
+.nav-left .nav2>a {
+	font-size: 16px;
+	line-height: 45px;
+	height: 45px;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 2px;
+	background: #4d8cf3 url("../img/index/left.png") right center no-repeat;
+	color: #fff;
+}
+
+.nav-left .nav2.on>a {
+	background: #4d8cf3 url("../img/index/down.png") right center no-repeat;
+}
+
+.children {
+	display: none;
+}
+
+.children li a {
+	line-height: 35px;
+	height: 35px;
+	margin-bottom: 1px;
+	text-indent: 3em;
+}
+
+.children li.on a, .children li:hover a, .children li:focus a, .children li:active a {
+	color: #FFFFFF;
+	background: #8ab2f3;
+}
+
+.main-right {
+	background-color: #fff;
+	margin-left: 240px;
+	padding: 10px 15px;
+}
+
+i.ismanage {
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	background: url("../img/smanage.png") no-repeat;
+	margin-bottom: -10px;
+}
+
+i.ipmanage {
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	background: url("../img/pmanage.png") 3px 3px no-repeat;
+	margin-bottom: -10px;
+}
+/*********************************************首页******************************************/
+/*********************************************团队报名列表******************************************/
+.table-hd {
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 10px;
+	padding: 5px 0px;
+	line-height: 30px;
+}
+
+.table-hd .title {
+	border-bottom: 2px solid #2463b9;
+	font-size: 18px;
+	color: #2463b9;
+	padding-bottom: 8px;
+}
+
+i.itable {
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	background: url("../img/table.png");
+	margin-bottom: -7px;
+	margin-right: 5px;
+}
+
+.table-form {
+	position: relative;
+	padding-right: 100px;
+}
+
+button.search {
+	position: absolute;
+	top: 50%;
+	margin-top: -15px;
+	right: 10px;
+	font-size: 16px;
+	padding: 5px 20px;
+}
+
+.table-form .group {
+	width: 300px;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+.table-form .group label {
+	width: 80px;
+	text-align: right;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	margin-right: 5px;
+	font-weight: normal;
+}
+
+.table-form .group .input {
+	width: 200px;
+	box-sizing: border-box;
+	line-height: 30px;
+	height: 30px;
+}
+
+.table-form .group .address {
+	display: inline-block;
+	width: 200px;
+	box-sizing: border-box;
+}
+
+.table-form .group .address select {
+	width: 48%;
+	box-sizing: border-box;
+}
+
+.table-toolbar button {
+	margin-right: 5px;
+}
+
+a.lookinfo {
+	display: inline-block;
+	background: #4d8cf3;
+	color: #fff;
+	padding: 2px 5px;
+	margin-right: 3px;
+	font: 14px/20px "Microsoft YaHei", Helvetica, Arial, sans-serif;
+}
+
+a.lookinfo:hover, a.lookinfo:focus, a.lookinfo:active {
+	background: #196bf2;
+	color: #fff;
+	font: 14px/20px "Microsoft YaHei", Helvetica, Arial, sans-serif;
+}
+
+i.ilook {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	background: url("../img/look.png");
+	margin-bottom: -3px;
+	margin-right: 5px;
+}
+/*********************************************团队报名列表******************************************/
+/*********************************************企业报名状态统计列表******************************************/
+.table-statistics {
+	width: 90%;
+	border: solid #ccc;
+	border-width: 1px 0px 0px 1px;
+}
+
+.table-statistics td, .table-statistics th {
+	border: solid #ccc;
+	border-width: 0px 1px 1px 0px;
+	padding: 7px;
+	text-align: center;
+}
+
+.table-statistics th {
+	background-color: #eaf8ff
+}
+
+.table-footer {
+	margin: 10px 0px;
+}
+/*********************************************企业报名状态统计列表******************************************/
+/*********************************************登陆后首页******************************************/
+body.index {
+	background-color: #eee;
+	min-width: 1200px;
+}
+
+i.ipinfo {
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	background: url("../img/pinfo.png") 0px 0px no-repeat;
+	margin-bottom: -10px;
+	margin-right: 5px;
+}
+
+i.iflow {
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	background: url("../img/iflow.png") 0px 0px no-repeat;
+	margin-bottom: -7px;
+	margin-right: 5px;
+}
+
+.myinfo {
+	margin-bottom: 15px;
+}
+
+.myinfo div {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.pinfo td {
+	padding: 6px;
+}
+
+.pinfo td.center {
+	width: 100px;
+	text-align: right;
+	color: #999;
+}
+
+.pinfo td.imgtd {
+	width: 150px;
+	vertical-align: top;
+}
+
+.pinfo .btn-green {
+	margin-left: 114px;
+}
+
+hr {
+	height: 1px;
+	background-color: #ccc;
+	border: none;
+	margin: 20px 0px;
+}
+
+.indexTip {
+	border: 1px dashed #ccc;
+	padding: 15px;
+	line-height: 30px;
+	margin: 10px 0 15px 0;
+}
+
+.indexTip span {
+	color: red;
+}
+
+.indexTip a {
+	display: inline-block;
+}
+
+.flow-img img {
+	margin: auto;
+	width: 100%;
+}
+/*********************************************登陆后首页******************************************/
+/*********************************************成员列表******************************************/
+.diytable .table-toolbar button {
+	padding: 7px 10px;
+}
+
+.diytable .table-statistics {
+	margin-top: 10px;
+	width: 100%;
+}
+
+.waring {
+	background: transparent url(../img/waring.png) 0.5em 50% no-repeat;
+	text-indent: 2.2em;
+	border: 1px solid #DA8AB4;
+	color: #DA8AB4;
+	-moz-box-shadow: 0 0 0.25em #DA8AB4;
+	-webkit-box-shadow: 0 0 0.25em #DA8AB4;
+	box-shadow: 0 0 0.25em #DA8AB4;
+	font-size: 1em;
+	line-height: 2;
+	margin: 5px 0 10px 0;
+}
+/*********************************************成员列表******************************************/
+/*********************************************注册页1******************************************/
+.agreeMentWrap, .wrapRegType {
+	width: 1080px;
+	padding: 40px;
+	margin: 15px auto;
+	background: #fff;
+	box-sizing: border-box;
+}
+
+.agreeMentTitle {
+	text-align: center;
+	font: bold 24px/24px 'Microsoft Yahei';
+	color: #4d8cf3;
+	height: 50px;
+	line-height: 50px;
+	border-bottom: 1px solid #ccc;
+}
+
+.agreeMentCont {
+	font: normal 14px/30px 'simsun';
+	padding: 20px 0;
+}
+
+.agreeMentCont p {
+	text-indent: 2em;
+}
+
+.agreeMentCtl {
+	text-align: center;
+}
+
+.agreebtn {
+	background: #4d8cf3;
+	color: #fff;
+}
+
+.agreebtn, .disagreebtn {
+	display: inline-block;
+	width: 150px;
+	height: 45px;
+	text-align: center;
+	font: bold 14px/45px 'simsun';
+	border: 1px solid #4d8cf3;
+	cursor: pointer;
+}
+
+.agreeMentCtl .opers {
+	margin: 10px;
+}
+/*********************************************注册页1******************************************/
+/*********************************************注册页2******************************************/
+.wrapRegType .title h1 {
+	padding: 0px 20px;
+	background: #fff;
+	margin: 10px 0px;
+	height: 46px;
+	font: bold 24px/46px 'Microsoft YaHei';
+	color: #318dac;
+	display: inline-block;
+}
+
+.wrapRegType .title {
+	text-align: center;
+}
+
+.wrapRegType .title:after {
+	border-bottom: 1px solid #ccc;
+	content: '';
+	display: block;
+	margin-top: -30px;
+}
+
+.sprite {
+	background: url(../img/sprite.png) 0 0 no-repeat;
+	width: 78px;
+	height: 80px;
+	display: block;
+	margin: auto;
+}
+
+.aboutlist li i.about1 {
+	background-position: 0px -126px;
+}
+
+.aboutlist li i.about2 {
+	background-position: -81px -126px;
+}
+
+.aboutlist li i.about3 {
+	background-position: -162px -126px;
+}
+
+.aboutlist li i.about4 {
+	background-position: -243px -126px;
+}
+
+.aboutlist li i.about5 {
+	background-position: -324px -126px;
+}
+
+.aboutlist li i.about6 {
+	background-position: -324px -36px;
+}
+
+.aboutlist li i.about7 {
+	 background-position: -240px -36px;
+}
+
+.aboutlist {
+	margin: 50px 0px 20px;
+}
+
+.aboutlist li {
+	float: left;
+	width: 323px;
+	height: 425px;
+	border: 1px solid #d4eeff;
+	text-align: center;
+	margin: 5px;
+	padding: 20px;
+	box-sizing: border-box;
+	position: relative;
+}
+
+.aboutlist li h4 {
+	font-size: 18px;
+	color: #3b3b3b;
+	text-align: center;
+	margin-bottom: 25px;
+	font-family: 'Microsoft YaHei';
+}
+
+.aboutlist li p {
+	text-indent: 28px;
+	text-align: left;
+	font: 12px/24px 'Microsoft Yahei';
+	color: #444;
+}
+
+.regCtl {
+	position: absolute;
+	left: 50%;
+	bottom: 20px;
+	margin-left: -90px;
+}
+
+.regCtl a {
+	display: inline-block;
+	width: 80px;
+	height: 25px;
+	line-height: 25px;
+	background: #f4792c;
+	color: #fff;
+	font-size: 14px;
+	text-align: center;
+	margin: 0 8px 0 0;
+}
+
+.regCtl a:hover {
+	background: #d85706;
+}
+/*********************************************注册页2******************************************/
+/*********************************************注册页3******************************************/
+body.register {
+	background-color: #eee;
+	min-width: 1200px;
+}
+/*********************************************注册页3******************************************/
+/*********************************************确认材料真实性承诺 对话框******************************************/
+.submitDialog {
+	padding: 10px;
+	display: none;
+}
+
+.submitDialog h1 {
+	text-align: center;
+	margin: 10px 0px;
+}
+
+.submitDialog h1 span {
+	background: #fff;
+	padding: 0px 10px;
+}
+
+.submitDialog h1:before {
+	content: '';
+	display: block;
+	border-top: 1px dashed #010101;
+	margin-bottom: -10px;
+	z-index: -1;
+}
+
+.submitDialog .bd {
+	text-indent: 2em;
+}
+
+.submitDialog .fd {
+	text-align: center;
+	margin: 10px 0px;
+}
+/*********************************************确认材料真实性承诺 对话框******************************************/
+/*********************************************报名信息的审核情况******************************************/
+.form-statue {
+	margin-bottom: 10px;
+	background: #fff4e5;
+	padding: 8px 20px;
+	color: #f56108;
+}
+
+.form-statue span {
+	margin-right: 20px;
+}
+
+.form-statue .reason {
+	font-style: inherit;
+	color: #008cc8;
+}
+/*********************************************报名信息的审核情况******************************************/
+/*********************************************修改密码******************************************/
+.changepersonpwd {
+	padding: 10px 20px;
+}
+
+.changepersonpwd .tool {
+	text-align: center;
+}
+
+.changepersonpwd .group label {
+	display: inline-block;
+	width: 80px;
+	text-align: right;
+}
+
+.changepersonpwd .group .input {
+	line-height: 25px;
+	height: 25px;
+}
+/*********************************************修改密码******************************************/
+/*********************************************注册页面******************************************/
+.wrap form[name="register"] table {
+	position: relative;
+	margin: 0px auto;
+	left: 0px;
+	top: 0px;
+	width: 500px;
+}
+
+.wrap form[name="register"] td {
+	vertical-align: sub;
+}
+/*********************************************登录页面******************************************/
+body {
+	/* 	min-width: 1100px;
+ */
+	
+}
+
+.wrap-login {
+	width: 940px;
+	background: #fff;
+	margin: 25px auto;
+	position: relative;
+	min-height: 500px;
+	font-size: 14px;
+	padding: 0;
+}
+
+.wrap-login .content-header {
+	height: 95px;
+	border-bottom: 1px solid #959595;
+	text-align: center;
+}
+
+.wrap-login .content-header .title {
+	position: relative;
+	width: 114px;
+	height: 94px;
+	margin: 0 auto;
+	font-size: 18px;
+	border-bottom: 2px solid #4f87f2;
+	text-align: center;
+}
+
+.wrap-login .content-header .title .name {
+	position: relative;
+	bottom: 2px;
+	padding-top: 70px;
+}
+
+.wrap-login table {
+	position: absolute;
+	left: 120px;
+	top: 25px;
+	width: 364px;
+	margin-left: 0;
+	margin-top: 0;
+}
+
+.wrap-login .other {
+	padding-right: 44px;
+}
+
+.wrap-login .login-cutoff {
+	display: block;
+	position: absolute;
+	left: 520px;
+	top: 20px;
+}
+
+.wrap .login-form {
+	position: relative;
+}
+
+.wrap-login .form-right {
+	position: absolute;
+	right: 40px;
+	width: 318px;
+	top: 60px;
+	font-size: 12px;
+	color: #f14110;
+}
+
+.form-right li {
+	width: 118px;
+	float: left;
+	color: #221815;
+	margin: 0 10px;
+}
+
+.form-right .login-list {
+	padding-left: 10px;
+}
+
+.form-right .login-list p {
+	text-align: center;
+}
+
+.form-right li img {
+	margin: 0 auto;
+}
+
+/*----------------------------打印-----------------------------*/
+.print-cred {
+	position: fixed;
+	right: 0px;
+	top: 450px;
+}
+
+.print-cred a {
+	display: block;
+}

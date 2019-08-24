@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="renderer" content="webkit|ie-stand">
+<title>豫创天下创业创新大赛</title>
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+<link rel="icon" href="../r/cms/zcb/zcb/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="../r/cms/zcb/zcb/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="../r/cms/zcb/zcb/css/reset.min.css">
+<link rel="stylesheet" type="text/css" href="../r/cms/zcb/zcb/css/main2.css">
+<link rel="stylesheet" type="text/css" href="../r/cms/zcb/zcb/theme/liMarquee/liMarquee.css">
+<script type="text/javascript" src="../r/cms/zcb/zcb/theme/jquery/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../r/cms/zcb/zcb/theme/liMarquee/jquery.liMarquee.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../r/cms/zcb/zcb/css/basic.css">
+<link rel="stylesheet" type="text/css" href="../r/cms/zcb/zcb/css/common.css">
+
+<style type="text/css">
+	    .marquee{
+			position: absolute;
+			right: 160px;
+			left: 740px;
+		}
+		.marquee .str_wrap{
+			line-height: 66px;
+			font-size: 16px;
+			color:#f25c2e;
+		}
+</style>
+<script type="text/javascript">
+        $(function(){
+            $(".dowebok").liMarquee();
+        });
+        function preview() {
+            bdhtml = window.document.body.innerHTML;//获取当前页的html代码
+            sprnstr = "<!--startprint-->";//设置打印开始区域
+            eprnstr = "<!--endprint-->";//设置打印结束区域
+            prnhtml = bdhtml.substring(bdhtml.indexOf(sprnstr) + 17); //从开始代码向后取html
+            prnhtml = prnhtml.substring(0, prnhtml.indexOf(eprnstr));//从结束代码向前取html
+            window.document.body.innerHTML = prnhtml;
+            window.print();
+            window.document.body.innerHTML = bdhtml;
+        }
+</script>
+<script type="text/javascript" src="../r/cms/zcb/zcb/js/jquery.luara.0.0.1.min.js"></script>
+</head>
+<body>
+<header class="ey-head"> 
+   <nav class="navbar navbar-default box-shadow-none ey-nav"> 
+    <div class="container"> 
+     <div class="row">  
+      <div class="navbar-header pull-xs-left"> 
+       <a href="index.html" class="navbar-logo vertical-align block pull-xs-left" title="豫创天下"> 
+        <div class="vertical-align-middle"> 
+         <img src="../r/cms/zcb/zcb/img/yctxlogo.png" alt="豫创天下" /> 
+        </div> </a> 
+      </div>
+     
+    
+      <div class="collapse navbar-collapse navbar-collapse-toolbar pull-md-right p-0" id="ey-nav-collapse"> 
+       <ul class="nav navbar-nav navlist"> 
+        <li class="nav-item"> <a href="index.html"  class="nav-link ">首页</a> </li> 
+        
+        <li class="nav-item m-l-10"> <a href="dsjs.html" class="nav-link dropdown-toggle"  data-hover="dropdown" aria-haspopup="true" aria-expanded="false"> 大赛介绍</a> 
+        </li> 
+         <li class="nav-item dropdown m-l-10"> <a href="ssdt.html" class="nav-link"  data-hover="dropdown" aria-haspopup="true" aria-expanded="false"> 赛事动态</a> 
+        </li>
+         <li class="nav-item dropdown m-l-10"> <a href="zcds.html" class="nav-link "  data-hover="dropdown" aria-haspopup="true" aria-expanded="false"> 众创导师</a> 
+        </li>
+         <li class="nav-item dropdown m-l-10"> <a href="wjhg.html" class="nav-link "  data-hover="dropdown" aria-haspopup="true" aria-expanded="false"> 往届回顾</a> 
+        </li>
+         <li class="nav-item dropdown m-l-10"> <a href="hzzy.html" class="nav-link "  data-hover="dropdown" aria-haspopup="true" aria-expanded="false"> 合作资源</a> 
+        </li>
+         <li class="nav-item dropdown m-l-10"> <a href="zczc.html" class="nav-link active"  data-hover="dropdown" aria-haspopup="true" aria-expanded="false"> 政策支持</a> 
+        </li>
+        
+          <li class="nav-item m-l-10 ey-login">
+           
+              <a href="loginmana.php" id="login" class="navlog">登录</a><span>|</span>
+           
+              <a href="selection.html" id="register" class="navreg">注册</a>
+          </li>
+       
+
+       </ul> 
+      </div> 
+     </div> 
+    </div> 
+   </nav> 
+  </header> 
+<script type="text/javascript">
+    $(function () {
+        var url = window.location.href;
+        $(".navbar li").each(function () {
+            var href = $(this).find("a").attr("href");
+            if(url.indexOf("sfjd") > 0||url.indexOf("Sfjd") > 0||url.indexOf("cooperator") > 0||url.indexOf("Cooperator") > 0||url.indexOf("hzdw") > 0||url.indexOf("Hzdw") > 0){
+            	$(".navbar li").removeClass("active");
+            	$("#cooperator_li").addClass("active");
+            	return;
+            }
+            if (url.indexOf(href) > 0) {
+                $(".navbar li").removeClass("active");
+                if (url.indexOf("competition/") > 0||url.indexOf("dsjs") > 0||url.indexOf("Dsjs") > 0) {
+                    $("#competitionIntroduce").addClass("active");
+                } else {
+                    $(this).addClass("active");
+                }
+            } else {
+                if (url.indexOf("competition/") > 0||url.indexOf("dsjs") > 0||url.indexOf("Dsjs") > 0) {
+                    $(".navbar li").removeClass("active");
+                    $("#competitionIntroduce").addClass("active");
+                }
+            }
+        });
+        $("#icon-search").click(function () {
+            if ($(this).hasClass("in")) {
+                $("#icon-search").removeClass("in");
+                $("#search_cont").hide();
+            }
+            else {
+                $("#icon-search").addClass("in");
+                $("#search_cont").show();
+            }
+        });
+
+    });
+
+    function gotoIndexpage() {
+        location.href = "#";
+    }
+</script>	
+	<div class="sign-up">
+		<img class="banner" src="../r/cms/zcb/zcb/img/com-intro-bg.jpg" />
+	</div>
+	<div class="pol-sup">
+		<div class="pol-info-1 cf">
+			<div class="title w200">政策支持</div>
+			<p><span style="color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;; text-align: justify;">除奖金资助外，符合条件的大赛获奖项目和优秀项目可相应享受“十加N”支持措施。</span><br></p>
+			<p class="p-1 pleft">
+				<i class="icon1"></i><span class="strong-num">(一)孵化场地保障</span>参赛团队或企业可申请入驻人力资源社会保障、科技、团委等部门建设认定的创业孵化载体，享受一定年限的减免费场地和孵化服务。
+			</p>
+			<p class="p-1 pright">
+				<i class="icon2"></i><span class="strong-num">(二)创业融资支持</span>获奖企业或团队有机会获得广东省创新创业基金旗下子基金及大赛合作投资基金、创业投资机构股权投资。有意愿且符合相关条件的参赛团队或企业，可由承办单位推荐到广州股权交易中心“中国青创板”、广东金融高新区股权交易中心“科技板”挂牌展示，享受相关投融资对接服务。
+			</p>
+			<p class="p-1 pleft">
+				<i class="icon3"></i><span class="strong-num">(三)创业担保贷款</span>参赛企业（登记注册3年内）可向企业登记注册所在地人力资源社会保障部门（经办银行）申请创业担保贷款（其中个人贷款额度最高20万元，合伙经营或创办小企业可按每人不超过20万元、总额不超过200万元的额度实行“捆绑性”贷款，符合条件的劳动密集型和科技型小微企业贷款最高额度300万元），并按规定享受贴息。
+			</p>
+			<p class="p-1 pright">
+				<i class="icon4"></i><span class="strong-num">(四)银行专项授信</span>获奖企业可获得大赛合作银行提供的企业贷款授信和利率优惠支持。
+			</p>
+			<p class="p-1 pleft">
+				<i class="icon5"></i><span class="strong-num">(五)素质提升资助</span>有意愿的获奖团队或企业负责人，将由省人力资源社会保障厅直接推荐参加广东省初创企业经营者素质提升培训班（中山大学等知名高校EDP培训课程），并享受10000元学费资助。
+			</p>
+			<p class="p-1 pright">
+				<i class="icon6"></i><span class="strong-num">(六)政策补贴直补</span>获奖团队或企业将获得人力资源社会保障部门政策补贴服务，包括专人对接了解情况、精准梳理可享受补贴清单、一次性落实有关补贴等，扶持补贴总额最高可达10万元。
+			</p>
+			<p class="p-1 pleft">
+				<i class="icon7"></i><span class="strong-num">(七)职称晋升</span>科技海归领航赛铜奖（含）以上项目，项目负责人根据所从事专业领域和已取得专业技术资格，可直接申报高一等级的专业技术资格。博士博士后创新赛铜奖（含）以上项目，团队成员中的博士毕业生和在站博士后可直接申报副高（含）以上职称。
+			</p>
+			<p class="p-1 pright">
+				<i class="icon8"></i><span class="strong-num">(八)人才评选推荐</span>参赛企业或团队获得科技海归领航赛、博士博士后创新赛铜奖（含）以上奖项的，项目主要负责人可享受：省人力资源社会保障厅直接推荐到相关人才项目中参加评选；符合条件的优先推荐申报“珠江人才计划”、“广东特支计划”、“扬帆计划”评审；属留学回国人员且符合相关条件的，优先推荐申报国家和省相关资助项目。
+			</p>
+			<p class="p-1 pleft">
+				<i class="icon9"></i><span class="strong-num">(九)交流对接平台</span>参赛团队或企业可申请参加广东“双创活动周”项目展示、融资对接、创业沙龙等交流对接活动；申请加入广东省众创俱乐部，获得广东省创业导师团创业导师辅导服务；为所有参赛博士博士后创新技术和成果转化提供线上对接平台，实现科技企业技术难题和博士博士后人才无缝对接。
+			</p>
+			<p class="p-1 pright">
+				<i class="icon10"></i><span class="strong-num">(十)人力资源服务</span>符合入户条件的获奖项目核心成员可获得高层次人才一站式专区服务，包括协调办理落户手续、人事档案托管等多项服务。
+			</p>
+			<p class="p-1 pleft">
+				<i class="icon11"></i><span class="strong-num">(十一)其他支持措施</span>各主办单位、支持单位和合作单位结合职能或自身优势，为参赛企业（团队）提供相关政策和资源支持。
+			</p>
+			<p><span style="color: rgb(68, 68, 68); font-family: &quot;Microsoft Yahei&quot;; text-align: justify;">有关政策可在大赛官方网站和相关部门网站查询或向相关部门咨询。</span><br></p>
+		</div>
+	</div>
+ <p class="footer">版权所有：河南省人力资源和社会保障厅&nbsp;&nbsp;&nbsp;&nbsp;
+        技术支持：河南上博软件科技有限公司</p>
+</body>
+</html>

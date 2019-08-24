@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="renderer" content="webkit|ie-stand">
+<title>豫创天下创业创新大赛</title>
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+<link rel="icon" href="../r/cms/zcb/zcb/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="../r/cms/zcb/zcb/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="../r/cms/zcb/zcb/css/reset.min.css">
+<link rel="stylesheet" type="text/css" href="../r/cms/zcb/zcb/css/main2.css">
+<link rel="stylesheet" type="text/css" href="../r/cms/zcb/zcb/theme/liMarquee/liMarquee.css">
+<script type="text/javascript" src="../r/cms/zcb/zcb/theme/jquery/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../r/cms/zcb/zcb/theme/liMarquee/jquery.liMarquee.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="../r/cms/zcb/zcb/css/basic.css">
+<link rel="stylesheet" type="text/css" href="../r/cms/zcb/zcb/css/common.css">
+<style type="text/css">
+.marquee {
+	position: absolute;
+	right: 160px;
+	left: 740px;
+}
+
+.marquee .str_wrap {
+	line-height: 66px;
+	font-size: 16px;
+	color: #f25c2e;
+}
+</style>
+<script type="text/javascript">
+	$(function() {
+		$(".dowebok").liMarquee();
+	});
+	function preview() {
+		bdhtml = window.document.body.innerHTML;//获取当前页的html代码
+		sprnstr = "<!--startprint-->";//设置打印开始区域
+		eprnstr = "<!--endprint-->";//设置打印结束区域
+		prnhtml = bdhtml.substring(bdhtml.indexOf(sprnstr) + 17); //从开始代码向后取html
+		prnhtml = prnhtml.substring(0, prnhtml.indexOf(eprnstr));//从结束代码向前取html
+		window.document.body.innerHTML = prnhtml;
+		window.print();
+		window.document.body.innerHTML = bdhtml;
+	}
+</script>
+</head>
+<body>
+<!-- 定义id变量取值 -->
+    <!--赛事动态栏目ID  -->
+      <!--赛事动态栏目-总赛事ID  -->
+	<header class="ey-head"> 
+   <nav class="navbar navbar-default box-shadow-none ey-nav"> 
+    <div class="container"> 
+     <div class="row">  
+      <div class="navbar-header pull-xs-left"> 
+       <a href="index.html" class="navbar-logo vertical-align block pull-xs-left" title="豫创天下"> 
+        <div class="vertical-align-middle"> 
+         <img src="../r/cms/zcb/zcb/img/yctxlogo.png" alt="豫创天下" /> 
+        </div> </a> 
+      </div>
+     
+    
+      <div class="collapse navbar-collapse navbar-collapse-toolbar pull-md-right p-0" id="ey-nav-collapse"> 
+       <ul class="nav navbar-nav navlist"> 
+        <li class="nav-item"> <a href="index.html"  class="nav-link ">首页</a> </li> 
+        
+        <li class="nav-item m-l-10"> <a href="dsjs.html" class="nav-link "  data-hover="dropdown" aria-haspopup="true" aria-expanded="false"> 大赛介绍</a> 
+        </li> 
+         <li class="nav-item m-l-10"> <a href="ssdt.html" class="nav-link active"  data-hover="dropdown" aria-haspopup="true" aria-expanded="false"> 赛事动态</a> 
+        </li>
+         <li class="nav-item m-l-10"> <a href="zcds.html" class="nav-link"  data-hover="dropdown" aria-haspopup="true" aria-expanded="false"> 众创导师</a> 
+        </li>
+         <li class="nav-item m-l-10"> <a href="wjhg.html" class="nav-link"  data-hover="dropdown" aria-haspopup="true" aria-expanded="false"> 往届回顾</a> 
+        </li>
+         <li class="nav-item m-l-10"> <a href="hzzy.html" class="nav-link"  data-hover="dropdown" aria-haspopup="true" aria-expanded="false"> 合作资源</a> 
+        </li>
+         <li class="nav-item m-l-10"> <a href="zczc.html" class="nav-link"  data-hover="dropdown" aria-haspopup="true" aria-expanded="false"> 政策支持</a> 
+        </li>
+        
+          <li class="nav-item m-l-10 ey-login">
+           
+              <a href="loginmana.php" id="login" class="navlog">登录</a><span>|</span>
+           
+              <a href="selection.html" id="register" class="navreg">注册</a>
+          </li>
+       
+
+       </ul> 
+      </div> 
+     </div> 
+    </div> 
+   </nav> 
+  </header> 
+<script type="text/javascript">
+    $(function () {
+        var url = window.location.href;
+        $(".navbar li").each(function () {
+            var href = $(this).find("a").attr("href");
+            if(url.indexOf("sfjd") > 0||url.indexOf("Sfjd") > 0||url.indexOf("cooperator") > 0||url.indexOf("Cooperator") > 0||url.indexOf("hzdw") > 0||url.indexOf("Hzdw") > 0){
+            	$(".navbar li").removeClass("active");
+            	$("#cooperator_li").addClass("active");
+            	return;
+            }
+            if (url.indexOf(href) > 0) {
+                $(".navbar li").removeClass("active");
+                if (url.indexOf("competition/") > 0||url.indexOf("dsjs") > 0||url.indexOf("Dsjs") > 0) {
+                    $("#competitionIntroduce").addClass("active");
+                } else {
+                    $(this).addClass("active");
+                }
+            } else {
+                if (url.indexOf("competition/") > 0||url.indexOf("dsjs") > 0||url.indexOf("Dsjs") > 0) {
+                    $(".navbar li").removeClass("active");
+                    $("#competitionIntroduce").addClass("active");
+                }
+            }
+        });
+        $("#icon-search").click(function () {
+            if ($(this).hasClass("in")) {
+                $("#icon-search").removeClass("in");
+                $("#search_cont").hide();
+            }
+            else {
+                $("#icon-search").addClass("in");
+                $("#search_cont").show();
+            }
+        });
+
+    });
+
+    function gotoIndexpage() {
+        location.href = "#";
+    }
+</script> 
+	<div class="sign-up">
+		<img class="banner" src="../r/cms/zcb/zcb/img/com-intro-bg.jpg" />
+	</div>
+	<div class="game-nav">
+		<ul>
+		    <li  id="10485" class="active"><a href="#">总赛事</a></li>
+		    <li id="10487"><a href="#">豫创天下大赛</a></li>
+		
+		</ul>
+	</div>
+	<div class="pol-sup pol-info">
+
+		<ul class="dynamiclist">
+			<li>
+				<div class="timedata inblock">
+					<p class="day">25</p>
+					<p class="year">2018-09</p>
+				</div>
+				<div class="contdata inblock">
+					<a href="#"><h3>关于举办2018年豫创天下创新创业大赛的通知</h3></a>
+					<div class="dycontent">
+                    	<p class="inblock noimg"></p>
+					</div>
+				</div> <a href="#"><div class="icondata inblock"></div></a>
+			</li>
+			<li>
+				<div class="timedata inblock">
+					<p class="day">14</p>
+					<p class="year">2018-09</p>
+				</div>
+				<div class="contdata inblock">
+					<a href="#"><h3>关于发布2018年豫创天下创业创新大赛 第三批创业导师评委名单的公告</h3></a>
+					<div class="dycontent">
+                    	<p class="inblock noimg"></p>
+					</div>
+				</div> <a href="#"><div class="icondata inblock"></div></a>
+			</li>
+			<li>
+				<div class="timedata inblock">
+					<p class="day">30</p>
+					<p class="year">2018-08</p>
+				</div>
+				<div class="contdata inblock">
+					<a href="#"><h3>第三届“中国创翼”创业创新大赛河南省选拔赛圆满落幕 X个项目入围全国选拔赛</h3></a>
+					<div class="dycontent">
+                    	<p class="inblock noimg"></p>
+					</div>
+				</div> <a href="#"><div class="icondata inblock"></div></a>
+			</li>
+			<li>
+				<div class="timedata inblock">
+					<p class="day">27</p>
+					<p class="year">2018-08</p>
+				</div>
+				<div class="contdata inblock">
+					<a href="#"><h3>明天决赛！什么比赛这么火热？第一手官方资讯告诉你！</h3></a>
+					<div class="dycontent">
+                    	<p class="inblock noimg"></p>
+					</div>
+				</div> <a href="#"><div class="icondata inblock"></div></a>
+			</li>
+			<li>
+				<div class="timedata inblock">
+					<p class="day">23</p>
+					<p class="year">2018-08</p>
+				</div>
+				<div class="contdata inblock">
+					<a href="#"><h3>关于发布2018年豫创天下创业创新大赛 第二批创业导师评委名单的公告</h3></a>
+					<div class="dycontent">
+                    	<p class="inblock noimg"></p>
+					</div>
+				</div> <a href="#"><div class="icondata inblock"></div></a>
+			</li>
+
+		</ul>
+		<!-- 
+		<div class="page">
+&nbsp;<a class="prev" disabled="disabled" >首页</a><a disabled="disabled" class="prev">上一页</a>         <a class="active" href="#" onclick="location.href=encodeURI('index.html');">1</a>
+&nbsp;<a class="next" disabled="disabled">下一页</a><a href="#" class="prev">尾页</a>
+
+		</div> -->
+	</div>
+ <p class="footer">版权所有：河南省人力资源和社会保障厅&nbsp;&nbsp;&nbsp;&nbsp;
+        技术支持:河南上博软件科技有限公司</p>	<script type="text/javascript">
+		$(function() {
+			var channel = String(10449);
+			var status = "dynamic_li";
+			$("#"+status).addClass("active").siblings().removeClass("active");
+			$("#"+channel).addClass("active").siblings().removeClass("active");
+		    //$("#"+channel).addClass("active").siblings().removeClass("active");
+			
+		    
+		    
+			/* var url = window.location.href;
+			$(".game-nav li").each(function() {
+				var index = $(this).find("a").attr("index");
+				if (url.indexOf("type=" + index) > 0) {
+					$(".game-nav li").removeClass("active");
+					$(this).addClass("active");
+				}
+			});
+			$(".navbar li").removeClass("active");
+			$("#dynamic_li").addClass("active"); */
+		});
+		function gotopage(currentPage) {
+			var index = $(".game-nav li.active").find("a").attr("index");
+			var url = "sportsEventList.shtml?type=";
+			if (index) {
+				url = url + index;
+			}
+			if (currentPage) {
+				url = url + "&currentPage=" + currentPage;
+			}
+			location.href = url;
+		}
+	</script>
+
+</body>
+</html>

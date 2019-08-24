@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="renderer" content="webkit|ie-stand">
+<title>豫创天下创业创新大赛</title>
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+<link rel="icon" href="../r/cms/zcb/zcb/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="../r/cms/zcb/zcb/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="../r/cms/zcb/zcb/css/reset.min.css">
+<link rel="stylesheet" type="text/css" href="../r/cms/zcb/zcb/css/main2.css">
+<link rel="stylesheet" type="text/css" href="../r/cms/zcb/zcb/theme/liMarquee/liMarquee.css">
+<script type="text/javascript" src="../r/cms/zcb/zcb/theme/jquery/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../r/cms/zcb/zcb/theme/liMarquee/jquery.liMarquee.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../r/cms/zcb/zcb/css/basic.css">
+<link rel="stylesheet" type="text/css" href="../r/cms/zcb/zcb/css/common.css">
+
+<style type="text/css">
+.marquee {
+	position: absolute;
+	right: 160px;
+	left: 740px;
+}
+
+.marquee .str_wrap {
+	line-height: 66px;
+	font-size: 16px;
+	color: #f25c2e;
+}
+</style>
+<script type="text/javascript">
+	$(function() {
+		$(".dowebok").liMarquee();
+	});
+	function preview() {
+		bdhtml = window.document.body.innerHTML;//获取当前页的html代码
+		sprnstr = "<!--startprint-->";//设置打印开始区域
+		eprnstr = "<!--endprint-->";//设置打印结束区域
+		prnhtml = bdhtml.substring(bdhtml.indexOf(sprnstr) + 17); //从开始代码向后取html
+		prnhtml = prnhtml.substring(0, prnhtml.indexOf(eprnstr));//从结束代码向前取html
+		window.document.body.innerHTML = prnhtml;
+		window.print();
+		window.document.body.innerHTML = bdhtml;
+	}
+</script>
+</head>
+<body>
+<header class="ey-head"> 
+   <nav class="navbar navbar-default box-shadow-none ey-nav"> 
+    <div class="container"> 
+     <div class="row">  
+      <div class="navbar-header pull-xs-left"> 
+       <a href="index.html" class="navbar-logo vertical-align block pull-xs-left" title="豫创天下"> 
+        <div class="vertical-align-middle"> 
+         <img src="../r/cms/zcb/zcb/img/yctxlogo.png" alt="豫创天下" /> 
+        </div> </a> 
+      </div>
+     
+    
+      <div class="collapse navbar-collapse navbar-collapse-toolbar pull-md-right p-0" id="ey-nav-collapse"> 
+       <ul class="nav navbar-nav navlist"> 
+        <li class="nav-item"> <a href="index.html"  class="nav-link ">首页</a> </li> 
+        
+        <li class="nav-item m-l-10"> <a href="dsjs.html" class="nav-link dropdown-toggle"  data-hover="dropdown" aria-haspopup="true" aria-expanded="false"> 大赛介绍</a> 
+        </li> 
+         <li class="nav-item dropdown m-l-10"> <a href="ssdt.html" class="nav-link"  data-hover="dropdown" aria-haspopup="true" aria-expanded="false"> 赛事动态</a> 
+        </li>
+         <li class="nav-item dropdown m-l-10"> <a href="zcds.html" class="nav-link active"  data-hover="dropdown" aria-haspopup="true" aria-expanded="false"> 众创导师</a> 
+        </li>
+         <li class="nav-item dropdown m-l-10"> <a href="wjhg.html" class="nav-link"  data-hover="dropdown" aria-haspopup="true" aria-expanded="false"> 往届回顾</a> 
+        </li>
+         <li class="nav-item dropdown m-l-10"> <a href="hzzy.html" class="nav-link"  data-hover="dropdown" aria-haspopup="true" aria-expanded="false"> 合作资源</a> 
+        </li>
+         <li class="nav-item dropdown m-l-10"> <a href="zczc.html" class="nav-link"  data-hover="dropdown" aria-haspopup="true" aria-expanded="false"> 政策支持</a> 
+        </li>
+        
+          <li class="nav-item m-l-10 ey-login">
+           
+              <a href="loginmana.php" id="login" class="navlog">登录</a><span>|</span>
+           
+              <a href="selection.html" id="register" class="navreg">注册</a>
+          </li>
+       
+
+       </ul> 
+      </div> 
+     </div> 
+    </div> 
+   </nav> 
+  </header> 
+<script type="text/javascript">
+    $(function () {
+        var url = window.location.href;
+        $(".navbar li").each(function () {
+            var href = $(this).find("a").attr("href");
+            if(url.indexOf("sfjd") > 0||url.indexOf("Sfjd") > 0||url.indexOf("cooperator") > 0||url.indexOf("Cooperator") > 0||url.indexOf("hzdw") > 0||url.indexOf("Hzdw") > 0){
+            	$(".navbar li").removeClass("active");
+            	$("#cooperator_li").addClass("active");
+            	return;
+            }
+            if (url.indexOf(href) > 0) {
+                $(".navbar li").removeClass("active");
+                if (url.indexOf("competition/") > 0||url.indexOf("dsjs") > 0||url.indexOf("Dsjs") > 0) {
+                    $("#competitionIntroduce").addClass("active");
+                } else {
+                    $(this).addClass("active");
+                }
+            } else {
+                if (url.indexOf("competition/") > 0||url.indexOf("dsjs") > 0||url.indexOf("Dsjs") > 0) {
+                    $(".navbar li").removeClass("active");
+                    $("#competitionIntroduce").addClass("active");
+                }
+            }
+        });
+        $("#icon-search").click(function () {
+            if ($(this).hasClass("in")) {
+                $("#icon-search").removeClass("in");
+                $("#search_cont").hide();
+            }
+            else {
+                $("#icon-search").addClass("in");
+                $("#search_cont").show();
+            }
+        });
+
+    });
+
+    function gotoIndexpage() {
+        location.href = "#";
+    }
+</script>	<div class="sign-up">
+		<img class="banner" src="../r/cms/zcb/zcb/img/com-intro-bg.jpg" />
+	</div>
+	<div class="pol-sup">
+		<div class="pol-info" style="width: 1003px;">
+		  <div class="pro_heading cf">
+			<div class="title fl w200">名师风采</div>
+		  </div>
+	    <!-- 显示导师列表 -->
+		<ul class="items">
+			<li>
+			   <a href="#">
+					<div class="item ">
+						<img src="../u/cms/zcb/071448141ag6.jpg">
+						<p>阿龙·切哈诺沃</p>
+						<div class="desc" style="display: none;">诺贝尔化学奖获得者，中国科学院外籍院士。</div>
+					</div>
+			   </a>
+			</li>
+			<li>
+			   <a href="#">
+					<div class="item ">
+						<img src="../u/cms/zcb/071447115ls0.jpg">
+						<p>李东生</p>
+						<div class="desc" style="display: none;">TCL集团董事长兼CEO（首席执行官）、集团党委书记、创始人之一</div>
+					</div>
+			   </a>
+			</li>
+			<li>
+			   <a href="#">
+					<div class="item last">
+						<img src="../u/cms/zcb/071446046o5n.png">
+						<p>董明珠</p>
+						<div class="desc" style="display: none;">珠海格力集团有限公司 董事长 珠海格力电器股份有限公司 董事长兼总裁。</div>
+					</div>
+			   </a>
+			</li>
+			<li>
+			   <a href="#">
+					<div class="item ">
+						<img src="../u/cms/zcb/07143331x1ic.jpg">
+						<p>雷军</p>
+						<div class="desc" style="display: none;">中国知名企业家和天使投资人，现任小米科技的董事长兼CEO。</div>
+					</div>
+			   </a>
+			</li>
+       
+			<!-- <li><a href="/zcb/tutor-1992.html">
+					<div class="item">
+						<img src="r/cms/zcb/zcb/img/tutors/1992.jpg">
+						<p>李东生</p>
+						<div class="desc" style="display: none;">TCL集团董事长兼CEO（首席执行官）、集团党委书记、创始人之一</div>
+					</div>
+
+
+			</a></li>
+
+			<li><a href="/zcb/tutor-1993.html">
+					<div class="item last">
+						<img src="r/cms/zcb/zcb/img/tutors/1993.png">
+						<p>董明珠</p>
+						<div class="desc" style="display: none;">珠海格力集团有限公司 董事长 珠海格力电器股份有限公司 董事长兼总裁</div>
+					</div>
+
+
+			</a></li>
+
+			<li><a href="/zcb/tutor-1994.html">
+					<div class="item">
+						<img src="r/cms/zcb/zcb/img/tutors/1994.jpg">
+						<p>雷军</p>
+						<div class="desc" style="display: none;">中国知名企业家和天使投资人，现任小米科技的董事长兼CEO。 \n</div>
+					</div>
+
+
+			</a></li>
+
+			<li><a href="/zcb/tutor-2001.html">
+					<div class="item">
+						<img src="r/cms/zcb/zcb/img/tutors/2001.png">
+						<p>郑贵辉</p>
+						<div class="desc" style="display: none;">中创集团/中大创投总裁，中大创新谷联合创始人，广东医谷联合创始人，海鳖众筹联合创始人，庖丁技术联合创始人，云珠沙龙联合创始人，SME联合创始人，中创学院执行院长，中创产业研究院执行院长，广东天使会联合创始人、执行会长，广东省物流与供应链协会金融专业委员会主任。</div>
+					</div>
+
+
+			</a></li>
+
+			<li><a href="/zcb/tutor-2002.html">
+					<div class="item last">
+						<img src="r/cms/zcb/zcb/img/tutors/2002.png">
+						<p>耿雪辉</p>
+						<div class="desc" style="display: none;">中大创投执行总裁，中大创新谷联合创始人，中创学院常务副院长，广州创业谷执行董事，海鳖众筹联合创始人，云珠沙龙联合创始人，庖丁技术执行董事，广东医谷执行董事，萌芽基金投委会委员。</div>
+					</div>
+
+
+			</a></li>
+
+			<li><a href="/zcb/tutor-2003.html">
+					<div class="item">
+						<img src="r/cms/zcb/zcb/img/tutors/2003.png">
+						<p>舒元</p>
+						<div class="desc">经济学教授，博士生导师，复旦大学经济学博士，美国春田大学人文学荣誉博士，国务院特殊津贴获得者。</div>
+					</div>
+
+
+			</a></li>
+
+			<li><a href="/zcb/tutor-2004.html">
+					<div class="item">
+						<img src="r/cms/zcb/zcb/img/tutors/2004.png">
+						<p>张国军</p>
+						<div class="desc">博士，教授，博士生导师，长江学者特聘教授、南粤百杰人才。</div>
+					</div>
+
+
+			</a></li>
+
+			<li><a href="/zcb/tutor-2005.html">
+					<div class="item last">
+						<img src="r/cms/zcb/zcb/img/tutors/2005.png">
+						<p>倪浩</p>
+						<div class="desc">广东博士科技有限公司创始人</div>
+					</div>
+
+
+			</a></li>
+
+			<li><a href="/zcb/tutor-2006.html">
+					<div class="item">
+						<img src="r/cms/zcb/zcb/img/tutors/2006.png">
+						<p>韩海强</p>
+						<div class="desc">中南财经政法大学MBA，中级经济师，现任中创集团执行总裁，中大创新谷联合创始人，中创学院副院长，广东医谷、海鳖众筹、庖丁技术董事，广东省供应链金融专业委员会秘书长，广东食品药品职业学院客座教授。</div>
+					</div>
+
+
+			</a></li>
+
+			<li><a href="/zcb/tutor-2007.html">
+					<div class="item">
+						<img src="r/cms/zcb/zcb/img/tutors/2007.png">
+						<p>何国勇</p>
+						<div class="desc">曾担任广州市共青团创业创新大赛评委、共青团全国创新大赛总决赛评委、天英汇大赛决赛评委、多个孵化器及创客空间导师。</div>
+					</div>
+
+
+			</a></li>
+
+			<li><a href="/zcb/tutor-2008.html">
+					<div class="item last">
+						<img src="r/cms/zcb/zcb/img/tutors/2008.png">
+						<p>李新良</p>
+						<div class="desc">现任佛山市政协委员、禅城区人大代表；中国陶瓷工业协会副理事长、佛山市科技企业孵化协会会长。</div>
+					</div>
+
+
+			</a></li> -->
+
+		</ul>
+		
+		<!-- 分页 -->
+		<div class="page">
+	            <!-- <a class="prev" href="findTutors.shtml">首页</a>
+	            <a class="prev" href="findTutors.shtml">上一页</a>
+	            <a class="active" href="findTutors.shtml?currentPage=1">1</a>
+	            <a class="next" href="findTutors.shtml?currentPage=2">2</a>
+	            <a class="next" href="findTutors.shtml?currentPage=2">下一页</a>
+	            <a class="prev" href="findTutors.shtml?currentPage=2">尾页</a> -->
+&nbsp;<a class="prev" disabled="disabled" >首页</a><a disabled="disabled" class="prev">上一页</a>         <a class="active" href="#" onclick="location.href=encodeURI('index.html');">1</a>
+&nbsp;<a class="next" disabled="disabled">下一页</a><a href="#" class="prev">尾页</a>
+
+	    </div>
+    </div>
+	</div>
+ <p class="footer">版权所有：河南省人力资源和社会保障厅&nbsp;&nbsp;&nbsp;&nbsp;
+        技术支持：河南上博软件科技有限公司</p>	<script type="text/javascript">
+		$(function() {
+			$('.items li').hover(function() {
+				$(this).find('.desc').slideToggle();
+			});
+		})
+	</script>
+</body>
+</html>
