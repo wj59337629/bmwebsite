@@ -27,19 +27,20 @@ if($do == 'home'){
 	
 	include_once('usersys/index.php');
 }else if($do == 'main'){
-	$xminfo = $db->fetch_one_array("select * from ".DB_TABLEPRE."xminfo where uid = ".$_USER->id);
+	$xminfo = $db->fetch_one_array("select * from ".DB_TABLEPRE."xmbminfo where uid = ".$_USER->id);
 	
 	include_once('registration/team/main.php');
 }else if ($do == 'changePwd'){
 	include_once('user/changePwd.php');
 }else if($do == 'view'){
 	if($userinfo['companytype'] == 1){
-		$xminfo = $db->fetch_one_array("select * from ".DB_TABLEPRE."xminfo where uid = ".$_USER->id);
+		$xminfo = $db->fetch_one_array("select * from ".DB_TABLEPRE."xmbminfo where uid = ".$_USER->id);
 		
-		$nums = $db->result("select count(*) as num from ".DB_TABLEPRE."xmgdinfo where hid = ".$xminfo['id']);
-		
-		$xmgdinfos = $db->fetch_all("select * from ".DB_TABLEPRE."xmgdinfo where hid = ".$xminfo['id']);
-		
+		if($xminfo != null){
+			$nums = $db->result("select count(*) as num from ".DB_TABLEPRE."xmzcinfo where hid = ".$xminfo['id']);
+			
+			$xmzcinfos = $db->fetch_all("select * from ".DB_TABLEPRE."xmzcinfo where hid = ".$xminfo['id']);
+		}
 		include_once('registration/team/view.php');
 	}else if($userinfo['companytype'] == 2){
 		include_once('registration/team/qyview.php');
@@ -48,12 +49,12 @@ if($do == 'home'){
 	
 }else if($do == 'getMemberList'){
 	
-	$xminfo = $db->fetch_one_array("select * from ".DB_TABLEPRE."xminfo where uid = ".$_USER->id);
+	$xminfo = $db->fetch_one_array("select * from ".DB_TABLEPRE."xmbminfo where uid = ".$_USER->id);
 	
 	if($xminfo != null){
-		$nums = $db->result("select count(*) as num from ".DB_TABLEPRE."xmgdinfo where hid = ".$xminfo['id']);
+		$nums = $db->result("select count(*) as num from ".DB_TABLEPRE."xmzcinfo where hid = ".$xminfo['id']);
 		
-		$xmgdinfos = $db->fetch_all("select * from ".DB_TABLEPRE."xmgdinfo where hid = ".$xminfo['id']);
+		$xmzcinfos = $db->fetch_all("select * from ".DB_TABLEPRE."xmzcinfo where hid = ".$xminfo['id']);
 	}
 	
 	include_once('member/team/getMemberList.php');
@@ -68,7 +69,13 @@ if($do == 'home'){
 	include_once('member/team/teampass.php');
 }else if($do == 'edit'){
 
-	$xminfo = $db->fetch_one_array("select * from ".DB_TABLEPRE."xminfo where uid = ".$_USER->id);
+	$xminfo = $db->fetch_one_array("select * from ".DB_TABLEPRE."xmbminfo where uid = ".$_USER->id);
+	
+	if($xminfo != null){
+		$nums = $db->result("select count(*) as num from ".DB_TABLEPRE."xmzcinfo where hid = ".$xminfo['id']);
+		
+		$xmzcinfos = $db->fetch_all("select * from ".DB_TABLEPRE."xmzcinfo where hid = ".$xminfo['id']);
+	}
 	
 	include_once('registration/team/edit.php');
 }else if($do == 'logout'){
@@ -110,10 +117,10 @@ if($do == 'home'){
 			exit;
 		}
 		
-		if (!is_dir("dataupload/")) {                    //创建路径
-			mkdir("dataupload/");
+		if (!is_dir("dataupload/".$_USER->id."/".get_date('Y-m-d',PHP_TIME))) {                    //创建路径
+			mkdir("dataupload/".$_USER->id."/".get_date('Y-m-d',PHP_TIME));
 		}
-		$url = "dataupload/";
+		$url = "dataupload/".$_USER->id."/".get_date('Y-m-d',PHP_TIME);
 		//当文件存在
 		if (file_exists($url.$fileName)) {
 			//echo $fileName." already exists.";
@@ -125,94 +132,93 @@ if($do == 'home'){
 		}
 	}
 	
-	$leader = getGP('leader','P');
-	$status = getGP('status','P');
-	$version = getGP('version','P');
-	$id = getGP('id','P');
-	
-	$gender = getGP('gender','P');
-	$birthday = getGP('birthday','P');
-	$degree = getGP('degree','P');//学历
-	$id_cart_type = getGP('id_cart_type','P');//证件类型
-	$id_card_no = getGP('id_card_no','P');//证件号码
-	$college = getGP('college','P');//毕业学校
-	$bydate = getGP('bydate','P');
-	$field = getGP('field','P');//专业
-	$email = getGP('email','P');
-	$tel = getGP('tel','P');
-	$team_name = getGP('team_name','P');
-	$qq = getGP('qq','P');
-	$teampeoplunum = getGP('teampeoplenum','P');
-	$zcmny = getGP('zcmny','P');
-	$achievement = getGP('achievement','P');//个人简历
-	
-	$match_type = getGP('match_type','P');//赛事类型 默认为 1 豫创天下大赛
-	$project_name = getGP('project_name','P');//项目名称
-	$industry = getGP('industry','P');//行业
 	$selid = getGP('selid','P');//项目省份
 	$proj_laction_id = getGP('proj_laction_id','P');//项目地市
-	$address = getGP('address','P');//项目地址
-	$digest = getGP('digest','P');//项目摘要
-	$patent = getGP('patent','P');//国家专利
-	$rjzzinfo = getGP('rjzzinfo','P');//软件著作
-	$zcsbinfo = getGP('zcsbinfo','P');
-	$awards = getGP('awards','P');//获奖情况
+	$gsname = getGP('gsname','P');
+	$gsinfo = getGP('gstype','P','array');
+	$gstype = '';
+	foreach ($gsinfo as $row){
+		$gstype .= $row.',';
+	}
+	$gstype = substr($gstype,0, -1);
+	$startdate = getGP('startdate','P');
+	$yyzzcode = getGP('yyzzcode','P');
+	$industryinfo = getGP('industryinfo','P');
+	$jypeoplenum = getGP('jypeoplenum','P');
+	$nczypeoplenum = getGP('nczypeoplenum','P');
+	$pkjtpeoplenum = getGP('pkjtpeoplenum','P');
+	$totalmny = getGP('totalmny','P');
+	$lrinfo = getGP('lrinfo','P');
+	$xssr = getGP('xssr','P');
+	$zcmny = getGP('zcmny','P');
+	$leader = getGP('leader','P');
+	$gender = getGP('gender','P');
+	$hkaddress = getGP('hkaddress','P');
+	$idcard_no = getGP('idcard_no','P');
+	$tel = getGP('tel','P');
 	
-	$summarize = getGP('summarize','P');//项目概述
+	$jycs_address = getGP('jycs_address','P');
+	$khname = getGP('khname','P');
+	$khbank = getGP('khbank','P');
+	$bank_no = getGP('bank_no','P');
+	$xminstroduce = getGP('xminstroduce','P');
+	$bgs_suggest = getGP('bgs_suggest','P');
+	$leader_suggest = getGP('leader_suggest','P');
+	
 	$attachment = getGP('attachment','P');//计划书文件
 	
 	$xmarray = array(
-		'teampsnname' => $leader,
-		'gender' => $gender,
-		'birthday' => $birthday,
-		'education' => $degree,
-		'id_card_type' => $id_cart_type,
-		'idcard' => $id_card_no,
-		'graduation' => $college,
-		'bydate' => $bydate,
-		'zhuanye' => $field,
-		'email' => $email,
-		'tel' => $tel,
-		'gsname' => $team_name,
-		'qq' => $qq,
-		'teampeoplenum' => $teampeoplunum,
-		'zcmny' => $zcmny,
-		'jlcontent' => $achievement,
-		'xmname' => $project_name,
-		'xmtype' => $industry,
 		'xmselid' => $selid,
 		'xmsubselid' => $proj_laction_id,
-		'xmaddress' => $address,
-		'xminstroduce' => $digest,
-		'zlinfo' => $patent,
-		'rjzzinfo' => $rjzzinfo,
-		'zcsbinfo' => $zcsbinfo,
-		'otherinfo' => $awards,
-		'xmsummarize' => $summarize,
+		'gsname' => $gsname,
+		'gstype' => $gstype,
+		'startdate' => $startdate,
+		'yyzzcode' => $yyzzcode,
+		'industryinfo' => $industryinfo,
+		'jypeoplenum' => $jypeoplenum,
+		'nczypeoplenum' => $nczypeoplenum,
+		'pkjtpeoplenum' => $pkjtpeoplenum,
+		'totalmny' => $totalmny,
+		'lrinfo' => $lrinfo,
+		'xssr' => $xssr,
+		'zcmny' => $zcmny,
+		'teampsnname' => $leader,
+		'gender' => $gender,
+		'hkaddress' => $hkaddress,
+		'idcard_no' => $idcard_no,
+		'tel' => $tel,
+		'jycs_address' => $jycs_address,
+		'khname' => $khname,
+		'khbank' => $khbank,
+		'bank_no' => $bank_no,
+		'xminstroduce' => $xminstroduce,
+		'bgs_suggest' => $bgs_suggest,
+		'leader_suggest' => $leader_suggest,
+		'ispass' => 0,
 		'uid' => $_USER->id
 	);
 	
-	$xminfo = $db->fetch_one_array("select * from ".DB_TABLEPRE."xminfo where uid = ".$_USER->id);
+	$xminfo = $db->fetch_one_array("select * from ".DB_TABLEPRE."xmbminfo where uid = ".$_USER->id);
 	
 	if($xminfo == null){
-		insert_db('xminfo', $xmarray);
+		insert_db('xmbminfo', $xmarray);
 		$insert_id = $db->insert_id();
 		
 		$uptarray = array(
 			'xmpath' => $url,
 		);
 		
-		update_db('xminfo', $uptarray, array('id'=>$insert_id));
+		update_db('xmbminfo', $uptarray, array('id'=>$insert_id));
 		
 	}else{
-		update_db('xminfo', $xmarray, array('id'=>$xminfo['id']));
+		update_db('xmbminfo', $xmarray, array('id'=>$xminfo['id']));
 		
 		if($url != null){
 			$uptarray = array(
 					'xmpath' => $url,
 			);
 			
-			update_db('xminfo', $uptarray, array('id'=>$xminfo['id']));
+			update_db('xmbminfo', $uptarray, array('id'=>$xminfo['id']));
 		}
 	}
 	
@@ -223,7 +229,7 @@ if($do == 'home'){
 	
 }else if($do == 'datasubmit'){
 	
-	$xminfo = $db->fetch_one_array("select * from ".DB_TABLEPRE."xminfo where uid = ".$_USER->id);
+	$xminfo = $db->fetch_one_array("select * from ".DB_TABLEPRE."xmbminfo where uid = ".$_USER->id);
 	
 	$ispass = getGP('promise','P');
 	
@@ -231,7 +237,7 @@ if($do == 'home'){
 		'ispass' => 1
 	);
 	
-	update_db('xminfo', $uptdate, array('id'=>$xminfo['id']));
+	update_db('xmbminfo', $uptdate, array('id'=>$xminfo['id']));
 	
 	$returninfo = '{"message":"信息提交成功！","success":true}';
 	
@@ -251,52 +257,49 @@ if($do == 'home'){
 		
 		echo $returninfo;
 }else if($do == 'delete'){
-	$db->query("delete from ".DB_TABLEPRE."xminfo where uid = ".$_USER->id);
+	$db->query("delete from ".DB_TABLEPRE."xmbminfo where uid = ".$_USER->id);
 	
 	$returninfo = '{"message":"信息清除成功！","success":true}';
 	
 	echo $returninfo;
 }else if($do == 'saveTeamMember'){
-	$xminfo = $db->fetch_one_array("select * from ".DB_TABLEPRE."xminfo where uid = ".$_USER->id);
+	$xminfo = $db->fetch_one_array("select * from ".DB_TABLEPRE."xmbminfo where uid = ".$_USER->id);
 	
 	if($xminfo != null){
-		$nums = $db->result("select count(*) as num from ".DB_TABLEPRE."xmgdinfo where hid = ".$xminfo['id']);
+		$nums = $db->result("select count(*) as num from ".DB_TABLEPRE."xmzcinfo where hid = ".$xminfo['id']);
 		
-		$xmgdinfos = $db->fetch_all("select * from ".DB_TABLEPRE."xmgdinfo where hid = ".$xminfo['id']);
+		$xmzcinfos = $db->fetch_all("select * from ".DB_TABLEPRE."xmzcinfo where hid = ".$xminfo['id']);
 	}
 	
-	$gdname = getGP('gdname','P');
-	$tzbfb = getGP('tzbfb','P');
-	$tzmny = getGP('tzmny','P');
-	$tztype = getGP('tztype','P');
+	$zcname = getGP('zcname','P');
+	$zcdate = getGP('zcdate','P');
+	$mnyinfo = getGP('mnyinfo','P');
 	
-	$repeatinfo = $db->fetch_one_array("select * from ".DB_TABLEPRE."xmgdinfo where gdname='$gdname'");
+	$repeatinfo = $db->fetch_one_array("select * from ".DB_TABLEPRE."xmzcinfo where zcname='$zcname'");
 	
 	if($repeatinfo != null){
-		$returninfo = '{"message":"股东不能重复！","success":false}';
+		$returninfo = '{"message":"创业扶持政策不能重复录入！","success":false}';
 		echo $returninfo;
 		exit();
 	}else{
 		$insert_array = array(
 			'hid' => $xminfo['id'],
-			'inid' => 0,
-			'gdname' => $gdname,
-			'tzbfb' => $tzbfb,
-			'tzmny' => $tzmny,
-			'tztype' => $tztype
+			'zcname' => $zcname,
+			'zcdate' => $zcdate,
+			'mnyinfo' => $mnyinfo
 		);
 		
-		insert_db('xmgdinfo', $insert_array);
-		$returninfo = '{"message":"股东新增成功！","success":true}';
+		insert_db('xmzcinfo', $insert_array);
+		$returninfo = '{"message":"创业扶持政策信息新增成功！","success":true}';
 		echo $returninfo;
 	}
 	
 }else if($do == 'todelProjectMember'){
 	$id = getGP('id','P');
 	
-	$db->query("delete from ".DB_TABLEPRE."xmgdinfo where bid=$id");
+	$db->query("delete from ".DB_TABLEPRE."xmzcinfo where bid=$id");
 	
-	$returninfo = '{"message":"股东删除成功！","success":true}';
+	$returninfo = '{"message":"创业扶持政策信息删除成功！","success":true}';
 	echo $returninfo;
 }
 

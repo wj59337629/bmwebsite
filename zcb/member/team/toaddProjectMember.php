@@ -33,7 +33,7 @@
 		<div class="form-bd dialog-form">
 				<input type="hidden" name="hid" value="">
 				<div class="group">
-					<label><span>*</span>姓名</label> <input type="text" class="input" name="gdname" maxlength="30" datatype="*" nullmsg="姓名不能为空" />
+					<label><span>*</span>政策名称</label> <input type="text" class="input" name="zcname" maxlength="30" datatype="*" nullmsg="政策名称不能为空" />
 				</div>
 <!-- 				<div class="group"> -->
 <!-- 					<label><span>*</span>身份证</label> <input type="text" class="input" name="id_card_no" maxlength="30" datatype="*" nullmsg="身份证不能为空" /> -->
@@ -66,40 +66,11 @@
 <!-- 					<label><span>*</span>手机号码</label> <input type="text" name="tel" class="input" datatype="phone" nullmsg="手机号码不能为空" errormsg="手机号码格式错误" /> -->
 <!-- 				</div> -->
 				<div class="group">
-					<label><span>*</span>投资占比(%)</label> <input type="text" name="tzbfb" class="input"  />
+					<label><span>*</span>享受时间</label> <input type="text" class="input Wdate" name="zcdate" onclick="WdatePicker()" datatype="*" nullmsg="享受时间不能为空" />
 				</div>
 				<div class="group">
-					<label><span>*</span>投资金额(万)</label> <input type="text" name="tzmny" class="input" />
+					<label><span>*</span>享受金额(万)</label> <input type="text" name="mnyinfo" class="input" datatype="*" nullmsg="享受金额不能为空" />
 				</div>
-				<div class="group">
-					<label><span>*</span>投资类型</label> 
-					<select class="input" name="tztype" datatype="*" nullmsg="投资类型不能为空">
-						<option value="现金投资">现金投资</option>
-						<option value="资产投资">资产投资</option>
-						<option value="技术投资">技术投资</option>
-					</select>
-				</div>
-<!-- 				<div class="group"> -->
-<!-- 					<label><span>*</span>所属群体</label> <select class="input" name="group_type"> -->
-<!-- 						<option value="9">在校大学生</option> -->
-<!-- 						<option value="1">具有中级及以上职称的专业技术人员</option> -->
-<!-- 						<option value="2">具有技师及以上职业资格的技能人才</option> -->
-<!-- 						<option value="3">具有研究生学历或硕士及以上学位的人员</option> -->
-<!-- 						<option value="4">在高校、科研院所及其他企事业单位从事科学研究、技术开发等工作的人员</option> -->
-<!-- 						<option value="5">留学归国人员</option> -->
-<!-- 						<option value="6">各级政府部门认定的高层次人才</option> -->
-<!-- 						<option value="7">拥有自主知识产权的人员</option> -->
-<!-- 						<option value="8">其他</option> -->
-<!-- 					</select> -->
-<!-- 				</div> -->
-			<!-- 	<div class="group">
-					<label><span>*</span>所属群体身份证明</label> <input type="text" class="input filepath" readonly /> <a class="file"> <i class="icon4 icon-update"></i>上传附件 <input type="file" name="identifications">
-					</a>
-				</div>
-				<div class="group">
-					<label><span>*</span>身份证附件</label> <input type="text" class="input filepath1" readonly /> <a class="file"> <i class="icon4 icon-update"></i>上传附件 <input type="file" name="id_card_files">
-					</a>
-				</div> -->
 		</div>
 		<div class="form-fd">
 			<button type="submit" class="btn btn-blue">提交</button>

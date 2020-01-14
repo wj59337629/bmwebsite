@@ -20,9 +20,9 @@ if ($do == 'skip'){
 	$usertype = $_GET['usertype'];
 	
 	if($usertype == 1){
-		$titlename = '豫创天下大赛（团队组）';
+		$titlename = '示范项目申报';
 	}else if($usertype == 2){
-		$titlename = '豫创天下大赛（企业组）';
+		$titlename = '示范县申报';
 	}
 	
 	include_once('register.php');

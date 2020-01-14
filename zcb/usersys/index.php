@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>豫创天下-报名系统</title>
+    <title>河南省人社厅返乡创业项目申报系统</title>
     <link type="text/css" rel="stylesheet" href="../css/common.css"/>
     <link type="text/css" rel="stylesheet" href="../css/main.css"/>
     
@@ -73,11 +73,11 @@
                 </ul>
             </li>
             
-                <li class="nav2"><a><i class="ipmanage"></i>创业项目管理</a>
+                <li class="nav2"><a><i class="ipmanage"></i>创业申报管理</a>
                     <ul class="children">
                         <li><a id="signup-a" onclick="loadIframe('admin.php?do=view')">我的报名信息</a></li>
-                        <li><a id="addmember" onclick="loadIframe('admin.php?do=getMemberList')">团队股东管理</a></li>
-                        <!--  <li><a onclick="loadIframe('admin.php?do=getAttachmentList')">附件管理</a></li> -->
+                       <!--  <li><a id="addmember" onclick="loadIframe('admin.php?do=getMemberList')">团队股东管理</a></li>
+                         <li><a onclick="loadIframe('admin.php?do=getAttachmentList')">附件管理</a></li> -->
                     </ul>
                 </li>
                <!--  <li class="nav2"><a><i class="ipmanage"></i>资格通过证明打印</a>

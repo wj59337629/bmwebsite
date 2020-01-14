@@ -46,21 +46,21 @@
             </tr>
 
             <tr>
-                <td class="center">参赛类别：</td>
+                <td class="center">申报类别：</td>
                 <td>
-                        豫创天下大赛
-                </td>
-            </tr>
-            <tr>
-                <td class="center">参赛组别：</td>
-                <td>
-                        <?php if($userinfo['companytype'] == 1){echo '团队组';}else{echo '企业组';}?>
+                        <?php if($userinfo['companytype'] == 1){?>
+                        	示范项目申报
+                        <?php }else if($userinfo['companytype'] == 2){?>
+                        	示范县申报
+                        <?php }else if($userinfo['companytype'] == 3){?>
+                        	示范园区申报
+                        <?php }?>
                 </td>
             </tr>
             <tr>
                 <td class="center">审核进度：</td>
                 <td>
-                        <?php if($xminfo['ispass'] == 1){?>报名信息已提交<?php }else{?>报名信息未提交<?php }?>
+                        <?php if($xminfo['ispass'] == 1){?>报名信息已提交<?php }else if($xminfo['ispass'] == 2){?>报名信息已经审核通过<?php }else if($xminfo['ispass'] == 3){?>报名信息已经拒绝<?php }else{?>报名信息未提交<?php }?>
                 </td>
             </tr>
             <tr>

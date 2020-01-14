@@ -6,6 +6,7 @@ function ajaxRequest(option){
 	option.dataType = option.dataType || "json";
 	option.accept = option.accept || "application/json";
 	option.timeout = 300000;
+	option.styleinfo = option.styleinfo || {offset:'60%'};
 	var success = option.success;
 	var loader=null;
 	option.success = function(r){
@@ -20,7 +21,7 @@ function ajaxRequest(option){
 		console.log(c);
 	};
 	if(option.confirmMsg){
-		layer.confirm(option.confirmMsg, function(){
+		layer.confirm(option.confirmMsg,option.styleinfo, function(){
 			loader = layer.load();
 			$.ajax(option);
 		});
@@ -60,6 +61,7 @@ function ajaxSubmit(self, option){
 	var loader = null;
 	option.beforeSubmit = function(){
 		loader = layer.load();
+		console.log(loader);
 		beforeSubmit();
 	};
 	option.success = function(r){
